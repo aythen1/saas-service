@@ -1,26 +1,22 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) =>{
-    sequelize.define('User',{
+    sequelize.define('Shipping',{
         name:{
             type: DataTypes.STRING,
             allowNull:false
         },
-        userName:{
-            type: DataTypes.STRING,
+        amount:{
+            type:DataTypes.NUMBER,
             allowNull:false
         },
-        email:{
-            type: DataTypes.STRING,
+        global:{
+            type: DataTypes.BOOLEAN,
             allowNull:false
         },
-        password:{
-            type: DataTypes.STRING,
+        shippingType: {
+            type:DataTypes.ENUM('free','fixed','percentage'),
             allowNull:false
-        },
-        avatar:{
-            type: DataTypes.STRING,
-            allowNull:true
         }
     });
 }
