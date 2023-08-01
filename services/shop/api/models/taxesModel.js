@@ -1,26 +1,30 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) =>{
-    sequelize.define('User',{
+    sequelize.define('Taxes',{
         name:{
             type: DataTypes.STRING,
             allowNull:false
         },
-        userName:{
+        rate:{
+            type:DataTypes.NUMBER,
+            allowNull:false
+        },
+        country:{
             type: DataTypes.STRING,
             allowNull:false
         },
-        email:{
+        city:{
             type: DataTypes.STRING,
             allowNull:false
         },
-        password:{
+        state:{ // Taxes from Country / City / State 
             type: DataTypes.STRING,
             allowNull:false
         },
-        avatar:{
+        zip:{
             type: DataTypes.STRING,
-            allowNull:true
-        }
+            allowNull:false
+        },
     });
 }
