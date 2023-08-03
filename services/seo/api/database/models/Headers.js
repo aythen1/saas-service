@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 
 export default (sequelize) => {
-  sequelize.define("Miscellaneous", {
+  sequelize.define("Headers", {
     h1: {
       type: DataTypes.ARRAY(DataTypes.STRING),
     },
