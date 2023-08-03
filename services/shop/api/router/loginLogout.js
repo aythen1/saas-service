@@ -18,8 +18,8 @@ logInOut.post('/logout', (req, res) => {
 })
 
 logInOut.get('/verify',isAuthenticated,(req,res)=>{
-    console.log(req.session)
-    res.status(200).send('Tenes acceso K-po')
+    const verify = req.session
+    res.status(200).send({message:'Tenes acceso con tu cuenta', verify})
 })
 
 export default logInOut;
