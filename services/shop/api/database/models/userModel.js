@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) =>{
-    sequelize.define('User',{
+   return sequelize.define('User',{
         name:{
             type: DataTypes.STRING,
             allowNull:false

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {passport, isAuthenticated,login } from "../services/authPassport.js";
+import {passport, isAuthenticated,login } from "../../services/authPassport.js";
 
 const logInOut = Router();
 

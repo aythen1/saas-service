@@ -4,7 +4,7 @@ import {passport, isAuthenticated,login } from "../services/authPassport.js";
 
 //files imported
 import routerUser from "./user.js";
-import logInOut from "./loginLogout.js";
+import logInOut from "../router/inputs/loginLogout.js";
 
 const index = Router();
 

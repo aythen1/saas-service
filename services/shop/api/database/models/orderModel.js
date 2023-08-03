@@ -1,17 +1,17 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) =>{
-    sequelize.define('Order',{
+   return sequelize.define('Order',{
         truckingNumber:{
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             allowNull:false
         },
         fee: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             allowNull:false
         },
         total:{
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             allowNull:false
         },
         date:{
@@ -19,7 +19,7 @@ export default (sequelize) =>{
             allowNull:false
         },
         status: {
-            type: DataTypes.ENUM,
+            type: DataTypes.ENUM('inProgress', 'cart', 'shipping', 'ready'),
             allowNull:false
         },
         adress: {

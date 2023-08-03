@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) =>{
-    sequelize.define('Product',{
+   return sequelize.define('Product',{
         name:{
             type: DataTypes.STRING,
             allowNull:false
@@ -15,7 +15,7 @@ export default (sequelize) =>{
             allowNull:false
         },
         quantity:{
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         status:{

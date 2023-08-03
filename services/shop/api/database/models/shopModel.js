@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) =>{
-    sequelize.define('Shop',{
+   return sequelize.define('Shop',{
         logo:{
             type: DataTypes.STRING,
             allowNull:false

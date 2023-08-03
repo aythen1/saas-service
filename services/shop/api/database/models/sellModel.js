@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) =>{
-    sequelize.define('Sell',{
+   return sequelize.define('Sell',{
         dateTransaction:{
             type: DataTypes.STRING,
             allowNull:false
