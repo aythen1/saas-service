@@ -1,13 +1,13 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) =>{
-    sequelize.define('Taxes',{
+   return sequelize.define('Taxes',{
         name:{
             type: DataTypes.STRING,
             allowNull:false
         },
         rate:{
-            type:DataTypes.NUMBER,
+            type:DataTypes.INTEGER,
             allowNull:false
         },
         country:{

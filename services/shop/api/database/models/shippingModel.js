@@ -1,13 +1,13 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) =>{
-    sequelize.define('Shipping',{
+   return sequelize.define('Shipping',{
         name:{
             type: DataTypes.STRING,
             allowNull:false
         },
         amount:{
-            type:DataTypes.NUMBER,
+            type:DataTypes.INTEGER,
             allowNull:false
         },
         global:{
