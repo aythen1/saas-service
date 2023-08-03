@@ -3,9 +3,9 @@ import { Strategy as LocalStrategy } from 'passport-local';
 
 
 const users = [
-    { id: 0, username: 'user-0', password: 'pass-0', email: 'example01@gmail.com' },
-    { id: 1, username: 'user-1', password: 'pass-1', email: 'example02@gmail.com' },
-    { id: 2, username: 'user-2', password: 'pass-2', email: 'example03@gmail.com' }
+    { id: 0, userName: 'user-0', password: 'pass-0', email: 'example01@gmail.com' },
+    { id: 1, userName: 'user-1', password: 'pass-1', email: 'example02@gmail.com' },
+    { id: 2, userName: 'user-2', password: 'pass-2', email: 'example03@gmail.com' }
 ]; //db fake
 
 passport.serializeUser((user, done) => {
@@ -14,46 +14,39 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser((id, done) => {
     const user = users.find((user) => user.id === id); //simulation find in DB
-    console.log('llega?')
     done(null, user);
 });
 
 //Local Strategy
 passport.use(
     new LocalStrategy({
-        usernameField: 'email',
+        usernameField: 'userName', // 'email'
         passwordField: 'password',
         passReqToCallback: true
-    },(req, email, password, done) => {
-        const user = users.find((user) => user.email === email)
-        if (!user) { // [] == null/false ; [{}] == true}
-            console.log('llega?')
-            return done(null, false, { msj: 'Incorrect email' });
+    },(req, userName, password, done) => {
+        const user = users.find((user) => user.userName === userName)
+        if (!user) { 
+            return done(null, false, 'Incorrect userName');
         }
 
         if (user.password !== password) {
-            console.log('llega?')
-            return done(null, false, { msj: 'Incorrect password' });
+            return done(null, false, 'Incorrect password' );
         }
 
-        return done(null, user);
+        return done(null, user, 'Usuario ingresado con exito');
     })
 );
 
 // Ruta de inicio de sesión
 function login(req, res, next) {
     const userReq = req.body //{email:'',pass:''}
-    console.log(userReq.email, 'accedo al email enviado?')
-    passport.authenticate('local', { failureRedirect: '/login-fail', successRedirect: '/' }, (err, user) => {
-        console.log(user, 'user en login')
+    passport.authenticate('local', { failureRedirect: '/login-fail', successRedirect: '/' }, (err, user, message) => {
+        // console.log({messageError})
         if (err) {
             return next(err);
         }
         if (!user) {
-            return res.status(401).json({ message: 'email inválido' });
-        }
-        if (user.password !== userReq.password) {
-            return res.status(401).json({ msj: 'Incorrect password' });
+            return res.status(401).json({ message});
         }
         req.login(user, (err) => {
             if (err) {

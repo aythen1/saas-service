@@ -1,18 +1,21 @@
 import { Router } from "express";
-import routerUser from "./user.js";
 import swagger from "./swagger.js";
 import {passport, isAuthenticated,login } from "../services/authPassport.js";
+
+//files imported
+import routerUser from "./user.js";
+import logInOut from "./loginLogout.js";
 
 const index = Router();
 
 index.use("/", swagger);
 
-index.post('/login', login, (req,res)=>{
-    const {email,password} = req.body
-    const user = {email, password}
-    res.send(user)
-})
+index.use(logInOut)
 
 index.use("/index", routerUser);
+index.get('/',(req,res)=>{
+    console.log(req.session)
+    res.json({user:req.session})
+})
 
 export default index;
