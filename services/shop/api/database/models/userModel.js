@@ -4,15 +4,11 @@ export default (sequelize) =>{
    return sequelize.define('User',{
         name:{
             type: DataTypes.STRING,
-            allowNull:false
-        },
-        userName:{
-            type: DataTypes.STRING,
-            allowNull:false
+            // allowNull:false
         },
         email:{
             type: DataTypes.STRING,
-            allowNull:false
+             allowNull:false
         },
         password:{
             type: DataTypes.STRING,
