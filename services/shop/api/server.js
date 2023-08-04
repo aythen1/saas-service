@@ -10,7 +10,7 @@ const server = express();
 server.use(app)
 
 
-sequelize.sync({force : true})
+sequelize.sync({force : false})
 .then(() => {
     console.log('base de datos cargada correctamente')
     server.listen(PORT||4009 , ()=>{
