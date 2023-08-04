@@ -13,9 +13,12 @@ server.use(app)
 sequelize.sync({force : true})
 .then(() => {
     console.log('base de datos cargada correctamente')
-    server.listen(PORT||3001 , ()=>{
-        console.log(`Server on port: ${PORT||3001}`)
+    server.listen(PORT||4009 , ()=>{
+        console.log(`Server on port: ${PORT||4009}`)
     });
 
+})
+.catch((err) => {
+    console.log(err)
 })
 
