@@ -1,39 +1,44 @@
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
-
-
-const users = [
-    { id: 0, userName: 'user-0', password: 'pass-0', email: 'example01@gmail.com' },
-    { id: 1, userName: 'user-1', password: 'pass-1', email: 'example02@gmail.com' },
-    { id: 2, userName: 'user-2', password: 'pass-2', email: 'example03@gmail.com' }
-]; //db fake
+import { loadedModels } from '../database/connection/connectionDB.js';
+import { compare } from 'bcrypt';
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
 });
 
 passport.deserializeUser((id, done) => {
-    const user = users.find((user) => user.id === id); //simulation find in DB
+    const user = loadedModels.UserModel.findOne({
+        where:{
+            id
+        }
+    });
+
     done(null, user);
 });
 
 //Local Strategy
 passport.use(
     new LocalStrategy({
-        usernameField: 'userName', // 'email'
+        usernameField: 'email', // 'email'
         passwordField: 'password',
         passReqToCallback: true
-    },(req, userName, password, done) => {
-        const user = users.find((user) => user.userName === userName)
-        if (!user) { 
-            return done(null, false, 'Incorrect userName');
+    },async (req, email, password, done) => {
+        let findUser = await loadedModels.UserModel.findOne({
+            where:{
+                email
+            }
+        })
+
+        if (!findUser) { 
+            return done(null, false, 'Incorrect email');
         }
 
-        if (user.password !== password) {
+        if (!await compare(password,findUser.password)) {
             return done(null, false, 'Incorrect password' );
         }
 
-        return done(null, user, 'Usuario ingresado con exito');
+        return done(null, findUser, 'Usuario ingresado con exito');
     })
 );
 

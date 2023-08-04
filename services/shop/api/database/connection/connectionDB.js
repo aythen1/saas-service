@@ -27,8 +27,11 @@ const sequelize = new Sequelize(
   })
 
   //relaciones
-  loadedModels.UserModel.hasMany(loadedModels.ShopModel)
   loadedModels.ShopModel.belongsTo(loadedModels.UserModel)
+  loadedModels.UserModel.hasMany(loadedModels.ShopModel)
+
+  loadedModels.ShopModel.belongsToMany(loadedModels.ProductModel, {through: 'ShopModel_ProductModel'})
+  loadedModels.ProductModel.belongsTo(loadedModels.ShopModel, {through: 'ShopModel_ProductModel'})
 
   loadedModels.UserModel.hasMany(loadedModels.ProductModel)
   loadedModels.ProductModel.belongsTo(loadedModels.UserModel)

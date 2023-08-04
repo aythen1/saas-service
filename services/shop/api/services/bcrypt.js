@@ -7,8 +7,9 @@ const hashPassword = (pass)  => {
     })
 }
 
-const compare = () => {
-    return null
+const compare = (pass,passHash) => {
+    // console.log(bcrypt.compareSync(pass,passHash))
+    return bcrypt.compareSync(pass, passHash)
 }
 
 export {hashPassword, compare}
