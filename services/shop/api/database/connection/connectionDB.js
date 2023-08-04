@@ -27,8 +27,8 @@ const sequelize = new Sequelize(
   })
 
   //relaciones
-  loadedModels.UserModel.hasMany(loadedModels.ShopModel)
   loadedModels.ShopModel.belongsTo(loadedModels.UserModel)
+  loadedModels.UserModel.hasMany(loadedModels.ShopModel)
 
   loadedModels.UserModel.hasMany(loadedModels.ProductModel)
   loadedModels.ProductModel.belongsTo(loadedModels.UserModel)

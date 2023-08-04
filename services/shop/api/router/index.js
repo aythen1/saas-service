@@ -2,6 +2,7 @@ import { Router } from "express";
 import swagger from "./swagger.js";
 import {passport, isAuthenticated,login } from "../services/authPassport.js";
 import registerRouter from "./inputs/register.js";
+import root_shop from "./outputs/shop.js";
 
 //files imported
 import routerUser from "./user.js";
@@ -13,6 +14,7 @@ index.use("/", swagger);
 
 index.use(logInOut)
 index.use(registerRouter)
+index.use(root_shop)
 
 index.use("/index", routerUser);
 index.get('/',(req,res)=>{
