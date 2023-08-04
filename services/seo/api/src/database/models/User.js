@@ -25,7 +25,11 @@ export default (sequelize) => {
     name: {
       type: DataTypes.STRING,
       validate: {
-        min: 3,
+        isEven(value) {
+          if (value.length < 8) {
+            throw new Error("Min length is 8");
+          }
+        },
       },
     },
     timezone: {
@@ -42,6 +46,10 @@ export default (sequelize) => {
     },
     apiKey: {
       type: DataTypes.STRING,
+    },
+    isDisable: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
   });
 };

@@ -6,7 +6,7 @@ dotenv.config();
 
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_DATABASE } = process.env;
 
-const db = new Sequelize(
+export const db = new Sequelize(
   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_DATABASE}`,
   {
     logging: false,
@@ -16,8 +16,15 @@ const db = new Sequelize(
 
 models.forEach((model) => model(db));
 
-const { Headers, Miscellaneous, Performance, Security, Seo, User, Website } =
-  db.models;
+export const {
+  Headers,
+  Miscellaneous,
+  Performance,
+  Security,
+  Seo,
+  User,
+  Website,
+} = db.models;
 
 User.hasMany(Website);
 Website.belongsTo(User);
@@ -36,5 +43,3 @@ Miscellaneous.belongsTo(Website);
 
 Seo.hasOne(Headers);
 Headers.belongsTo(Seo);
-
-export default db;

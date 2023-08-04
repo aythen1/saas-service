@@ -36,5 +36,9 @@ export default (sequelize) => {
     favicon: {
       type: DataTypes.STRING,
     },
+    isDisable: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   });
 };

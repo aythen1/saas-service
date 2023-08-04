@@ -1,7 +1,7 @@
 import express from "express";
 import * as dotenv from "dotenv";
 import app from "./app.js";
-import db from "./database/conection/conectionDB.js";
+import { db } from "./src/database/conection/conectionDB.js";
 
 dotenv.config();
 

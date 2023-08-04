@@ -51,5 +51,9 @@ export default (sequelize) => {
     pageViews: {
       type: DataTypes.INTEGER,
     },
+    isDisable: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   });
 };
