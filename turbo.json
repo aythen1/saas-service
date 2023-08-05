@@ -10,7 +10,7 @@
       "test": {
         "cache": false
       },
-      "dev": {
+      "dev":{
         "cache": false
       }
     }
