@@ -2,6 +2,7 @@
   "name": "saas-service",
   "version": "0.0.1",
   "description": "services of aythen",
+  "private": "true",
   "workspaces": [
     "services/**"
   ],
