@@ -14,5 +14,9 @@ export default (sequelize) => {
     h4: {
       type: DataTypes.ARRAY(DataTypes.STRING),
     },
+    isDisable: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   });
 };

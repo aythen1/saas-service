@@ -29,5 +29,9 @@ export default (sequelize) => {
     deprecatedHtml: {
       type: DataTypes.ARRAY(DataTypes.STRING),
     },
+    isDisable: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   });
 };

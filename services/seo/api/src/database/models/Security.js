@@ -17,5 +17,9 @@ export default (sequelize) => {
     plaintextEmail: {
       type: DataTypes.ARRAY(DataTypes.STRING),
     },
+    isDisable: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   });
 };

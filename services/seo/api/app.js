@@ -10,7 +10,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/", index);
+app.use("/api-v1/", index);
 
 app.get("/root", (req, res) => {
   res.json({

@@ -1,6 +1,6 @@
 import { Seo } from "../../database/conection/conectionDB";
 
-export const deleteUser = async (req, res) => {
+export const deleteSeo = async (req, res) => {
   const { id } = req.params;
   const seo = await Seo.findByPk(id);
 

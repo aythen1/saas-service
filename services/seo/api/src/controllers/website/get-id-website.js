@@ -1,4 +1,4 @@
-import { Website } from "../../database/conection/conectionDB";
+import { Website } from "../../database/conection/conectionDB.js";
 
 export const getWebsiteByPk = async (req, res) => {
   const { id } = req.params;

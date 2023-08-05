@@ -1,4 +1,4 @@
-import { User } from "../../database/conection/conectionDB";
+import { User } from "../../database/conection/conectionDB.js";
 
 export const updateUser = async (req, res) => {
   const { id } = req.params;

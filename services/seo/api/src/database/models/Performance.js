@@ -23,5 +23,9 @@ export default (sequelize) => {
     domSize: {
       type: DataTypes.FLOAT,
     },
+    isDisable: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   });
 };
