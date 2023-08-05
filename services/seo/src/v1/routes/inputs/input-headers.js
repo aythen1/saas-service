@@ -1,11 +1,11 @@
-import { Router } from "express";
-import { addHeaders } from "../../controllers/headers/add-header";
-import { deleteHeaders } from "../../controllers/headers/delete-header";
+import { Router } from 'express'
+import { addHeaders } from '../../controllers/headers/add-header'
+import { deleteHeaders } from '../../controllers/headers/delete-header'
 
-const inputHeadersRoutes = Router();
+const inputHeadersRoutes = Router()
 
-inputHeadersRoutes.post("/", addHeaders);
+inputHeadersRoutes.post('/', addHeaders)
 
-inputHeadersRoutes.put("/:id", deleteHeaders);
+inputHeadersRoutes.put('/:id', deleteHeaders)
 
-export default inputHeadersRoutes;
+export default inputHeadersRoutes

@@ -1,55 +1,55 @@
-import { DataTypes } from "sequelize";
+import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  sequelize.define("User", {
+  sequelize.define('User', {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
       validate: {
-        isEmail: true,
-      },
+        isEmail: true
+      }
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         isAlphanumeric: true,
-        isEven(value) {
+        isEven (value) {
           if (value.length < 8) {
-            throw new Error("Min length is 8");
+            throw new Error('Min length is 8')
           }
-        },
-      },
+        }
+      }
     },
     name: {
       type: DataTypes.STRING,
       validate: {
-        isEven(value) {
+        isEven (value) {
           if (value.length < 8) {
-            throw new Error("Min length is 8");
+            throw new Error('Min length is 8')
           }
-        },
-      },
+        }
+      }
     },
     timezone: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATE
     },
     avatar: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     url: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     phone: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     apiKey: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     isDisable: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
-  });
-};
+      defaultValue: false
+    }
+  })
+}

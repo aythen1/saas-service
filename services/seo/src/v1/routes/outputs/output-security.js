@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { getSecurityByPk } from "../../controllers/security/get-id-security.js";
+import { Router } from 'express'
+import { getSecurityByPk } from '../../controllers/security/get-id-security.js'
 
-const outputSecurityRoutes = Router();
+const outputSecurityRoutes = Router()
 
 /**
  * @swagger
@@ -20,6 +20,6 @@ const outputSecurityRoutes = Router();
  *       200:
  *         description: security
  */
-outputSecurityRoutes.get("/", getSecurityByPk);
+outputSecurityRoutes.get('/', getSecurityByPk)
 
-export default outputSecurityRoutes;
+export default outputSecurityRoutes

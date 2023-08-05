@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { getPerformanceByPk } from "../../controllers/performance/get-id-performance.js";
+import { Router } from 'express'
+import { getPerformanceByPk } from '../../controllers/performance/get-id-performance.js'
 
-const outputPerformanceRoutes = Router();
+const outputPerformanceRoutes = Router()
 
 /**
  * @swagger
@@ -20,6 +20,6 @@ const outputPerformanceRoutes = Router();
  *       200:
  *         description: performance
  */
-outputPerformanceRoutes.get("/:id", getPerformanceByPk);
+outputPerformanceRoutes.get('/:id', getPerformanceByPk)
 
-export default outputPerformanceRoutes;
+export default outputPerformanceRoutes

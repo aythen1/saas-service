@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { getSeoByPk } from "../../controllers/seo/get-id-seo.js";
+import { Router } from 'express'
+import { getSeoByPk } from '../../controllers/seo/get-id-seo.js'
 
-const outputSeoRoutes = Router();
+const outputSeoRoutes = Router()
 
 /**
  * @swagger
@@ -20,6 +20,6 @@ const outputSeoRoutes = Router();
  *       200:
  *         description: seo
  */
-outputSeoRoutes.get("/:id", getSeoByPk);
+outputSeoRoutes.get('/:id', getSeoByPk)
 
-export default outputSeoRoutes;
+export default outputSeoRoutes

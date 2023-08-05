@@ -1,44 +1,44 @@
-import { DataTypes } from "sequelize";
+import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  sequelize.define("Seo", {
+  sequelize.define('Seo', {
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     metaDescription: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     contentKeywords: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     imageKeywords: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     friendlySeoUrl: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     page404: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     robotsTxt: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     noindex: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     linksOnPage: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     language: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     favicon: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     isDisable: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
-  });
-};
+      defaultValue: false
+    }
+  })
+}

@@ -1,8 +1,8 @@
-import { Router } from "express";
-import { getAllWebsites } from "../../controllers/website/get-all-website.js";
-import { getWebsiteByPk } from "../../controllers/website/get-id-website.js";
+import { Router } from 'express'
+import { getAllWebsites } from '../../controllers/website/get-all-website.js'
+import { getWebsiteByPk } from '../../controllers/website/get-id-website.js'
 
-const outputWebsiteRoutes = Router();
+const outputWebsiteRoutes = Router()
 
 /**
  * @swagger
@@ -17,7 +17,7 @@ const outputWebsiteRoutes = Router();
  *       200:
  *         description: websites
  */
-outputWebsiteRoutes.get("/", getAllWebsites);
+outputWebsiteRoutes.get('/', getAllWebsites)
 
 /**
  * @swagger
@@ -36,6 +36,6 @@ outputWebsiteRoutes.get("/", getAllWebsites);
  *       200:
  *         description: website
  */
-outputWebsiteRoutes.get("/:id", getWebsiteByPk);
+outputWebsiteRoutes.get('/:id', getWebsiteByPk)
 
-export default outputWebsiteRoutes;
+export default outputWebsiteRoutes

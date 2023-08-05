@@ -1,6 +1,6 @@
-import { Router } from "express";
+import { Router } from 'express'
 
-const routerUser = Router();
+const routerUser = Router()
 
 /**
  * @swagger
@@ -16,8 +16,8 @@ const routerUser = Router();
  *         description: users
  */
 
-routerUser.get("/user", (req, res) => {
-  res.send("/user");
-});
+routerUser.get('/user', (req, res) => {
+  res.send('/user')
+})
 
-export default routerUser;
+export default routerUser

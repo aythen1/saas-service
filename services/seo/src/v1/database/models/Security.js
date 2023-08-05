@@ -1,25 +1,25 @@
-import { DataTypes } from "sequelize";
+import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  sequelize.define("Security", {
+  sequelize.define('Security', {
     httpsEncryption: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.BOOLEAN
     },
     mixedContent: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.BOOLEAN
     },
     serverSignature: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     unsafeCORS: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     plaintextEmail: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     isDisable: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
-  });
-};
+      defaultValue: false
+    }
+  })
+}

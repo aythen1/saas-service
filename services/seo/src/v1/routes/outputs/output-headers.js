@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { getHeadersByPk } from "../../controllers/headers/get-id-header.js";
+import { Router } from 'express'
+import { getHeadersByPk } from '../../controllers/headers/get-id-header.js'
 
-const outputHeadersRoutes = Router();
+const outputHeadersRoutes = Router()
 
 /**
  * @swagger
@@ -20,6 +20,6 @@ const outputHeadersRoutes = Router();
  *       200:
  *         description: headers
  */
-outputHeadersRoutes.get("/:id", getHeadersByPk);
+outputHeadersRoutes.get('/:id', getHeadersByPk)
 
-export default outputHeadersRoutes;
+export default outputHeadersRoutes

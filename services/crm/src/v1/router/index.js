@@ -1,10 +1,10 @@
-import { Router } from "express";
-import routerUser from "./user.js";
-import swagger from "./swagger.js";
+import { Router } from 'express'
+import routerUser from './user.js'
+import swagger from './swagger.js'
 
-const index = Router();
+const index = Router()
 
-index.use("/", swagger);
-index.use("/index", routerUser);
+index.use('/', swagger)
+index.use('/index', routerUser)
 
-export default index;
+export default index

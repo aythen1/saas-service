@@ -1,22 +1,22 @@
-import { DataTypes } from "sequelize";
+import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  sequelize.define("Headers", {
+  sequelize.define('Headers', {
     h1: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     h2: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     h3: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     h4: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     isDisable: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
-  });
-};
+      defaultValue: false
+    }
+  })
+}

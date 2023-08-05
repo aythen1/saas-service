@@ -1,10 +1,10 @@
-import Headers from "./Headers.js";
-import Miscellaneous from "./Miscellaneous.js";
-import Performance from "./Performance.js";
-import Security from "./Security.js";
-import Seo from "./Seo.js";
-import User from "./User.js";
-import Website from "./Website.js";
+import Headers from './Headers.js'
+import Miscellaneous from './Miscellaneous.js'
+import Performance from './Performance.js'
+import Security from './Security.js'
+import Seo from './Seo.js'
+import User from './User.js'
+import Website from './Website.js'
 
 export const models = [
   Headers,
@@ -13,5 +13,5 @@ export const models = [
   Security,
   Seo,
   User,
-  Website,
-];
+  Website
+]

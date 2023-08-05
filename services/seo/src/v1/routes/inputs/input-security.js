@@ -1,11 +1,11 @@
-import { Router } from "express";
-import { addSecurity } from "../../controllers/security/add-security";
-import { deleteSecurity } from "../../controllers/security/delete-security";
+import { Router } from 'express'
+import { addSecurity } from '../../controllers/security/add-security'
+import { deleteSecurity } from '../../controllers/security/delete-security'
 
-const inputSecurityRoutes = Router();
+const inputSecurityRoutes = Router()
 
-inputSecurityRoutes.post("/", addSecurity);
+inputSecurityRoutes.post('/', addSecurity)
 
-inputSecurityRoutes.put("/", deleteSecurity);
+inputSecurityRoutes.put('/', deleteSecurity)
 
-export default inputSecurityRoutes;
+export default inputSecurityRoutes

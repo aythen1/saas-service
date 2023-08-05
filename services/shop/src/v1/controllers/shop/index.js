@@ -1,24 +1,24 @@
-import { loadedModels } from "../../database/connection/connectionDB.js"
+import { loadedModels } from '../../database/connection/connectionDB.js'
 const { UserModel } = loadedModels
 
-async function getShopByIdUser(req, res) {
-    const { idUser } = req.params
-    const consult = await loadedModels.ShopModel.findAll({
-        where: {
-            UserId:idUser
-        }
-    })
-    // console.log({ consult, idUser })
-    res.json({
-        message: 'Usuario econtrado',
-        consult,
-        idUser
-    })
+async function getShopByIdUser (req, res) {
+  const { idUser } = req.params
+  const consult = await loadedModels.ShopModel.findAll({
+    where: {
+      UserId: idUser
+    }
+  })
+  // console.log({ consult, idUser })
+  res.json({
+    message: 'Usuario econtrado',
+    consult,
+    idUser
+  })
 }
 
-async function createShop(req, res) {
-    const data = req.body; 
-    /*
+async function createShop (req, res) {
+  const data = req.body
+  /*
     {
         UserId: null,
         logo: null,
@@ -41,16 +41,16 @@ async function createShop(req, res) {
         schedule: null
     }
     */
-        
-    try {
-        let carga = await loadedModels.ShopModel.create(data)
-        res.json({message:"result",carga})
-    } catch (err) {
-        console.log(err)
-    }
+
+  try {
+    const carga = await loadedModels.ShopModel.create(data)
+    res.json({ message: 'result', carga })
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 export {
-    getShopByIdUser,
-    createShop
+  getShopByIdUser,
+  createShop
 }

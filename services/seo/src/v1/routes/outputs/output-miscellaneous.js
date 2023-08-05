@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { getMiscellaneousByPk } from "../../controllers/miscellaneous/get-id-miscellaneous.js";
+import { Router } from 'express'
+import { getMiscellaneousByPk } from '../../controllers/miscellaneous/get-id-miscellaneous.js'
 
-const outputMiscellaneousRoutes = Router();
+const outputMiscellaneousRoutes = Router()
 
 /**
  * @swagger
@@ -20,6 +20,6 @@ const outputMiscellaneousRoutes = Router();
  *       200:
  *         description: miscellaneous
  */
-outputMiscellaneousRoutes.get("/:id", getMiscellaneousByPk);
+outputMiscellaneousRoutes.get('/:id', getMiscellaneousByPk)
 
-export default outputMiscellaneousRoutes;
+export default outputMiscellaneousRoutes

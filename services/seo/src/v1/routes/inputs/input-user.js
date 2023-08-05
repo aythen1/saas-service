@@ -1,9 +1,9 @@
-import { Router } from "express";
-import { addUser } from "../../controllers/user/add-user.js";
-import { updateUser } from "../../controllers/user/update-user.js";
-import { deleteUser } from "../../controllers/user/delete-user.js";
+import { Router } from 'express'
+import { addUser } from '../../controllers/user/add-user.js'
+import { updateUser } from '../../controllers/user/update-user.js'
+import { deleteUser } from '../../controllers/user/delete-user.js'
 
-const userInputRoutes = Router();
+const userInputRoutes = Router()
 
 /**
  * @swagger
@@ -64,10 +64,10 @@ const userInputRoutes = Router();
  *       201:
  *         description: user
  */
-userInputRoutes.post("/", addUser);
+userInputRoutes.post('/', addUser)
 
-userInputRoutes.put("/:id", updateUser);
+userInputRoutes.put('/:id', updateUser)
 
-userInputRoutes.put("/:id", deleteUser);
+userInputRoutes.put('/:id', deleteUser)
 
-export default userInputRoutes;
+export default userInputRoutes

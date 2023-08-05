@@ -1,31 +1,31 @@
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { db, Website } from "../../src/v1/database/conection/conectionDB";
+import { afterAll, beforeAll, describe, expect, it } from 'vitest'
+import { db, Website } from '../../src/v1/database/conection/conectionDB'
 
-describe("Website Model", () => {
+describe('Website Model', () => {
   beforeAll(async () => {
-    await db.sync({ force: true });
-  });
+    await db.sync({ force: true })
+  })
 
-  it("should not create website if domain is not send", async () => {
-    expect.assertions(1);
+  it('should not create website if domain is not send', async () => {
+    expect.assertions(1)
     try {
-      await Website.create({});
+      await Website.create({})
     } catch (error) {
-      expect(error.message).toBeDefined();
+      expect(error.message).toBeDefined()
     }
-  });
+  })
 
-  it("should create website if domain is passed", async () => {
+  it('should create website if domain is passed', async () => {
     const website = await Website.create({
-      domain: "google.com",
-    });
-    expect(website.toJSON()).toHaveProperty("domain", "google.com");
-  });
+      domain: 'google.com'
+    })
+    expect(website.toJSON()).toHaveProperty('domain', 'google.com')
+  })
 
-  //falta agregar relaciones y mas validadores en el modelo
+  // falta agregar relaciones y mas validadores en el modelo
 
   afterAll(async () => {
-    await db.sync({ force: true });
-    db.close();
-  });
-});
+    await db.sync({ force: true })
+    db.close()
+  })
+})

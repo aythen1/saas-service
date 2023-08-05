@@ -1,15 +1,15 @@
-import { Seo } from "../../database/conection/conectionDB.js";
+import { Seo } from '../../database/conection/conectionDB.js'
 
 export const getSeoByPk = async (req, res) => {
-  const { id } = req.params;
+  const { id } = req.params
 
   try {
-    const seo = await Seo.findByPk(id);
+    const seo = await Seo.findByPk(id)
     if (!seo) {
-      return res.status(404).send(`The seoId: ${id} doesn't exist`);
+      return res.status(404).send(`The seoId: ${id} doesn't exist`)
     }
-    return seo;
+    return seo
   } catch (error) {
-    return res.status(404).send(error.message);
+    return res.status(404).send(error.message)
   }
-};
+}

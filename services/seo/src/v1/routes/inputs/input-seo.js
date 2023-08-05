@@ -1,11 +1,11 @@
-import { Router } from "express";
-import { addSeo } from "../../controllers/seo/add-seo";
-import { deleteSeo } from "../../controllers/seo/delete-seo";
+import { Router } from 'express'
+import { addSeo } from '../../controllers/seo/add-seo'
+import { deleteSeo } from '../../controllers/seo/delete-seo'
 
-const inputSeoRoutes = Router();
+const inputSeoRoutes = Router()
 
-inputSeoRoutes.post("/", addSeo);
+inputSeoRoutes.post('/', addSeo)
 
-inputSeoRoutes.put("/", deleteSeo);
+inputSeoRoutes.put('/', deleteSeo)
 
-export default inputSeoRoutes;
+export default inputSeoRoutes

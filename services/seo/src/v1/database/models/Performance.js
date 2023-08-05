@@ -1,31 +1,31 @@
-import { DataTypes } from "sequelize";
+import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  sequelize.define("Performance", {
+  sequelize.define('Performance', {
     textCompression: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.BOOLEAN
     },
     loadTime: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.FLOAT
     },
     pageSize: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.FLOAT
     },
     httpRequest: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     imageFormat: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     javascriptDefer: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     domSize: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.FLOAT
     },
     isDisable: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
-  });
-};
+      defaultValue: false
+    }
+  })
+}
