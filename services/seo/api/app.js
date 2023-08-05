@@ -1,7 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-import index from "./router/index.js";
+import index from "./src/routes/index.js";
 
 const app = express();
 
@@ -10,7 +10,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/", index);
+app.use("/api-v1/", index);
 
 app.get("/root", (req, res) => {
   res.json({
