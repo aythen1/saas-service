@@ -4,7 +4,9 @@
   "description": "services of aythen",
   "workspaces": ["services/**"],
   "scripts": {
-
+    "test": "turbo test",
+    "start": "turbo start",
+    "dev": "turbo dev"
   },
   "repository": {
     "type": "git",
