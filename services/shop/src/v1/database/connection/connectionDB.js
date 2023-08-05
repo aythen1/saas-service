@@ -4,18 +4,18 @@ import models from '../models/index.js';
 
 config();
 
-const { DBNAME, DBUSERNAME, DBPASS, DBHOST, DBPORT, DBDIALECT } = process.env;
+const { DB_NAME, DB_USERNAME, DB_PASSWORD, DB_HOST, DB_PORT, DB_DIALECT } = process.env;
 
 
 //  config de sequelize
 const sequelize = new Sequelize(
-    DBNAME,
-    DBUSERNAME,
-    DBPASS,
+    DB_NAME,
+    DB_USERNAME,
+    DB_PASSWORD,
     {
-      host: DBHOST,
-      port: DBPORT,
-      dialect: DBDIALECT,
+      host: DB_HOST,
+      port: DB_PORT,
+      dialect: DB_DIALECT,
       logging: false
     }
   )

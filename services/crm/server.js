@@ -9,6 +9,6 @@ const server = express();
 server.use(app);
 
 
-server.listen(PORT || 3000, () => {
-    console.log(`Server on port: ${PORT||3000}`)
+server.listen(PORT || 4005, () => {
+    console.log(`Server on port: ${PORT||4005}`)
 });

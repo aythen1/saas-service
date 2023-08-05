@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { db, Miscellaneous } from "../../src/v1/database/conection/conectionDB.js";
+import { db, Miscellaneous } from "../../src/v1/database/conection/conectionDB";
 
 describe("Miscellaneous Model", () => {
   beforeAll(async () => {

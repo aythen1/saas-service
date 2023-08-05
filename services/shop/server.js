@@ -1,8 +1,8 @@
 import * as dotenv from "dotenv";
 dotenv.config();
 import express from "express";
-import app from "./app.js";
-import { sequelize, loadedModels } from './database/connection/connectionDB.js';
+import app from "./src/v1/app.js";
+import { sequelize, loadedModels } from './src/v1/database/connection/connectionDB.js';
 
 const {PORT} = process.env;
 const server = express();
