@@ -2,11 +2,14 @@
   "name": "saas-service",
   "version": "0.0.0",
   "description": "services of aythen",
-  "workspaces": ["services/**"],
+  "workspaces": [
+    "services/**"
+  ],
   "scripts": {
     "test": "turbo test",
     "start": "turbo start",
-    "dev": "turbo dev"
+    "dev": "turbo dev",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,11 @@
   "license": "ISC",
   "dependencies": {
     "turbo": "^1.10.12"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "@s-ui/mono": "^2.35.0",
+    "husky": "^8.0.3"
   }
 }
