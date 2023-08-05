@@ -12,7 +12,8 @@
     "prepare": "husky install",
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix",
-    "commit": "sui-mono commit"
+    "commit": "sui-mono commit",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-promise": "^6.1.1",
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "standard-version": "^9.5.0"
   }
 }
