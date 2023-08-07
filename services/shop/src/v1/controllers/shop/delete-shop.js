@@ -9,7 +9,7 @@ export const deleteShop = async (req, res) => {
   }
 
   try {
-    await Shop.update({ isDisable: true }, { where: id })
+    await Shop.update({ isDisable: true }, { where: { id } })
     return res.send(`The shopId: ${id} was succesful deleted`)
   } catch (error) {
     return res.status(404).send(error.message)
