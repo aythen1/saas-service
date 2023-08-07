@@ -10,6 +10,8 @@ import inputShopRouter from './inputs/input-shop.js'
 import outPutShopRouter from './outputs/output-shop.js'
 import inputProductRouter from './inputs/input-product.js'
 import outPutProductRouter from './outputs/output-product.js'
+import inputOrderRoute from './inputs/input-order.js'
+import outPutOrderRouter from './outputs/output-order.js'
 
 const index = Router()
 
@@ -21,6 +23,8 @@ index.use('/shop', inputShopRouter)
 index.use('/shop', outPutShopRouter)
 index.use('/product', inputProductRouter)
 index.use('/product', outPutProductRouter)
+index.use('/order', inputOrderRoute)
+index.use('/order', outPutOrderRouter)
 
 index.use('/index', routerUser)
 index.get('/', (req, res) => {

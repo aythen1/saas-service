@@ -3,10 +3,11 @@ import { Product } from '../../database/connection/connectionDB.js'
 
 
 export const createProduct = async (req, res, next) => {
-  const { shops } = req.body
+  const { name, gallery, shops } = req.body
+  const data = {name, gallery}
 
 
-  const newProduct = await Product.create(req.body)
+  const newProduct = await Product.create(data)
   
 
   const response = await newProduct.addShop(shops)

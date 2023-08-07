@@ -8,15 +8,15 @@ export default (sequelize) => {
     },
     fee: {
       type: DataTypes.INTEGER,
-      allowNull: false
+     // allowNull: false
     },
     total: {
       type: DataTypes.INTEGER,
-      allowNull: false
+     // allowNull: false
     },
     date: {
       type: DataTypes.DATE,
-      allowNull: false
+    //  allowNull: false
     },
     status: {
       type: DataTypes.ENUM('inProgress', 'cart', 'shipping', 'ready'),
@@ -24,7 +24,7 @@ export default (sequelize) => {
     },
     adress: {
       type: DataTypes.STRING,
-      allowNull: false
+    //  allowNull: false
     }
   })
 }
