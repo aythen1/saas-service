@@ -8,7 +8,8 @@ import Taxes from './Taxes.js'
 import User from './User.js'
 import Group from './Group.js'
 import Category from './Category.js'
-
+import Author from './Author.js'
+import SocialMedia from './SocialMedia.js'
 
 export const models = [
   User,
@@ -20,5 +21,7 @@ export const models = [
   Chat,
   Taxes,
   Group,
-  Category
+  Category,
+  Author,
+  SocialMedia
 ]

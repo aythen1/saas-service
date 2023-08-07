@@ -2,7 +2,6 @@ import { Router } from 'express'
 import swagger from './swagger.js'
 import registerRouter from './inputs/register.js'
 
-
 // files imported
 import routerUser from './user.js'
 import logInOut from '../router/inputs/loginLogout.js'
@@ -18,7 +17,10 @@ import inputGroupRouter from './inputs/input-group.js'
 import outPutGroupRouter from './outputs/output-group.js'
 import inputCategoryRouter from './inputs/input-category.js'
 import outPutCategoryRouter from './outputs/output-category.js'
-
+import inputAuthorRoute from './inputs/input-author.js'
+import outputAuthorRoute from './outputs/output-author.js'
+import inputSocialMedia from './inputs/input-socialMedia.js'
+import outputSocialMedia from './outputs/output-socialMedia.js'
 const index = Router()
 
 index.use('/', swagger)
@@ -37,6 +39,10 @@ index.use('/group', inputGroupRouter)
 index.use('/group', outPutGroupRouter)
 index.use('/category', inputCategoryRouter)
 index.use('/category', outPutCategoryRouter)
+index.use('/author', inputAuthorRoute)
+index.use('/author', outputAuthorRoute)
+index.use('/socialMedia', inputSocialMedia)
+index.use('/socialMedia', outputSocialMedia)
 
 index.use('/index', routerUser)
 index.get('/', (req, res) => {

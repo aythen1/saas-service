@@ -31,8 +31,10 @@ export const {
   Shipping,
   Taxes,
   Group,
-  Category
-  
+  Category,
+  Author,
+  SocialMedia
+
 
 } = db.models
 
@@ -56,6 +58,12 @@ Product.belongsTo(Group)
 Category.hasMany(Product)
 Product.belongsTo(Category)
 
+
+Author.hasMany(Product)
+Product.belongsTo(Author)
+
+Author.hasMany(SocialMedia)
+SocialMedia.belongsTo(Author)
 
 //relacion muchos a muchos
 Shop.belongsToMany(Product, { through: 'Shop_Product' })
