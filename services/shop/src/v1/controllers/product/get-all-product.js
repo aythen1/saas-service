@@ -1,4 +1,4 @@
-import { Product, Shop } from "../../database/connection/connectionDB.js"
+import { Category, Group, Product, Shop } from "../../database/connection/connectionDB.js"
 
 
 export const productsFindAll = async (req, res, next) => {
@@ -11,6 +11,8 @@ export const productsFindAll = async (req, res, next) => {
         id: e.id,
         name: e.name,
         gallery: e.gallery,
+        GroupId: e.GroupId,
+        CategoryId: e.CategoryId,
         shops: e.Shops.map(i=> {
           return {
             id: i.id,

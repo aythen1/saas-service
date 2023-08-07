@@ -3,8 +3,8 @@ import { Product } from '../../database/connection/connectionDB.js'
 
 
 export const createProduct = async (req, res, next) => {
-  const { name, gallery, shops } = req.body
-  const data = {name, gallery}
+  const { name, gallery, CategoryId, GroupId, shops } = req.body
+  const data = {name, gallery, CategoryId, GroupId}
 
 
   const newProduct = await Product.create(data)

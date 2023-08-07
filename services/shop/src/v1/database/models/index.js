@@ -6,6 +6,8 @@ import Shipping from './Shipping.js'
 import Shop from './Shop.js'
 import Taxes from './Taxes.js'
 import User from './User.js'
+import Group from './Group.js'
+import Category from './Category.js'
 
 
 export const models = [
@@ -16,5 +18,7 @@ export const models = [
   Order,
   Shipping,
   Chat,
-  Taxes
+  Taxes,
+  Group,
+  Category
 ]

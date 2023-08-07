@@ -1,8 +1,8 @@
-import { Shipping } from "../../database/connection/connectionDB.js"
+import { Group } from "../../database/connection/connectionDB.js"
 
 
 
-export const addShipping = async (req, res, next) => {
+export const addGroup = async (req, res, next) => {
 
     const { name } = req.body
 
@@ -10,12 +10,14 @@ export const addShipping = async (req, res, next) => {
         res.status(404).json({message: 'name is missing'})
     }else{
         try{
-            const newShipping = await Shipping.create(req.body)
-            return newShipping ? res.status(200).json({message: 'orden creada exitosaente', newShipping}) :
+            const newGroup = await Group.create(req.body)
+            return newGroup ? res.status(200).json({message: 'grupo creado exitosaente', newGroup}) :
             res.status(404).json({mesage:'ha ocurrido un problema'})
         }catch(error){
             return res.status(404).send(error.message)
         }
     }
     
+
+
 }
