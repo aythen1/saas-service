@@ -26,21 +26,16 @@ export const {
   User,
   Shop,
   Product
-  
 
 } = db.models
-
-
 
 // relaciones
 Shop.belongsTo(User)
 User.hasMany(Shop)
 
-//relacion muchos a muchos
+// relacion muchos a muchos
 Shop.belongsToMany(Product, { through: 'Shop_Product' })
 Product.belongsToMany(Shop, { through: 'Shop_Product' })
 
 User.hasMany(Product)
 Product.belongsTo(User)
-
-
