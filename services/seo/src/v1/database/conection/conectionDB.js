@@ -4,15 +4,15 @@ import { models } from '../models/index.js'
 
 dotenv.config()
 
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_DATABASE } = process.env
+const { DB_NAME, DB_USERNAME, DB_PASSWORD, DB_HOST, DB_PORT, DB_DIALECT } =
+  process.env
 
-export const db = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_DATABASE}`,
-  {
-    logging: false,
-    native: false
-  }
-)
+export const db = new Sequelize(DB_NAME, DB_USERNAME, DB_PASSWORD, {
+  host: DB_HOST,
+  port: DB_PORT,
+  dialect: DB_DIALECT,
+  logging: false
+})
 
 models.forEach((model) => model(db))
 
