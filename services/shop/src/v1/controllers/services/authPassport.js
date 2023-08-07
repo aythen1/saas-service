@@ -1,6 +1,6 @@
 import passport from 'passport'
 import { Strategy as LocalStrategy } from 'passport-local'
-import { loadedModels } from '../database/connection/connectionDB.js'
+import { User } from '../../database/connection/connectionDB.js'
 import { compare } from 'bcrypt'
 
 passport.serializeUser((user, done) => {
@@ -8,7 +8,7 @@ passport.serializeUser((user, done) => {
 })
 
 passport.deserializeUser((id, done) => {
-  const user = loadedModels.UserModel.findOne({
+  const user = User.findOne({
     where: {
       id
     }
@@ -24,7 +24,7 @@ passport.use(
     passwordField: 'password',
     passReqToCallback: true
   }, async (req, email, password, done) => {
-    const findUser = await loadedModels.UserModel.findOne({
+    const findUser = await User.findOne({
       where: {
         email
       }

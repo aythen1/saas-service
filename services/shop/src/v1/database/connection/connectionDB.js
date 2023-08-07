@@ -1,13 +1,13 @@
 import { config } from 'dotenv'
 import { Sequelize } from 'sequelize'
-import models from '../models/index.js'
+import { models } from '../models/index.js'
 
 config()
 
 const { DB_NAME, DB_USERNAME, DB_PASSWORD, DB_HOST, DB_PORT, DB_DIALECT } = process.env
 
 //  config de sequelize
-const sequelize = new Sequelize(
+export const db = new Sequelize(
   DB_NAME,
   DB_USERNAME,
   DB_PASSWORD,
@@ -19,23 +19,28 @@ const sequelize = new Sequelize(
   }
 )
 
-// capitalizamos las iniciales de los modelos y le injectemos sequelize
-const loadedModels = {}
-Object.entries(models).forEach(([modelName, modelDefinition]) => {
-  loadedModels[modelName] = modelDefinition(sequelize)
-})
+// injectamos sequelize en todos los modelos
+models.forEach((model) => model(db))
+
+export const {
+  User,
+  Shop,
+  Product
+  
+
+} = db.models
+
+
 
 // relaciones
-loadedModels.ShopModel.belongsTo(loadedModels.UserModel)
-loadedModels.UserModel.hasMany(loadedModels.ShopModel)
+Shop.belongsTo(User)
+User.hasMany(Shop)
 
-loadedModels.ShopModel.belongsToMany(loadedModels.ProductModel, { through: 'ShopModel_ProductModel' })
-loadedModels.ProductModel.belongsTo(loadedModels.ShopModel, { through: 'ShopModel_ProductModel' })
+//relacion muchos a muchos
+Shop.belongsToMany(Product, { through: 'Shop_Product' })
+Product.belongsToMany(Shop, { through: 'Shop_Product' })
 
-loadedModels.UserModel.hasMany(loadedModels.ProductModel)
-loadedModels.ProductModel.belongsTo(loadedModels.UserModel)
+User.hasMany(Product)
+Product.belongsTo(User)
 
-export {
-  sequelize,
-  loadedModels
-}
+

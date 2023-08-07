@@ -1,22 +1,10 @@
-import { loadedModels } from '../../database/connection/connectionDB.js'
-const { UserModel } = loadedModels
+import { User, Shop } from '../../database/connection/connectionDB.js'
 
-async function getShopByIdUser (req, res) {
-  const { idUser } = req.params
-  const consult = await loadedModels.ShopModel.findAll({
-    where: {
-      UserId: idUser
-    }
-  })
-  // console.log({ consult, idUser })
-  res.json({
-    message: 'Usuario econtrado',
-    consult,
-    idUser
-  })
-}
 
-async function createShop (req, res) {
+
+
+
+export const createShop = async (req, res) => {
   const data = req.body
   /*
     {
@@ -43,14 +31,10 @@ async function createShop (req, res) {
     */
 
   try {
-    const carga = await loadedModels.ShopModel.create(data)
+    const carga = await Shop.create(data)
     res.json({ message: 'result', carga })
   } catch (err) {
     console.log(err)
   }
 }
 
-export {
-  getShopByIdUser,
-  createShop
-}
