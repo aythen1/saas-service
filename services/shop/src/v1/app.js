@@ -33,9 +33,9 @@ app.use(passport.session())
 
 app.use(passport.authenticate('session'))
 
-app.use('/', index) // http://localhost:3001/
+app.use('/', index) // http://localhost:4009/
 
-app.get('/root', (req, res) => { // http://localhost:3001/root
+app.get('/root', (req, res) => { // http://localhost:4009/root
   res.json({
     index: '/root'
   })

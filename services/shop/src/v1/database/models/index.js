@@ -1,19 +1,20 @@
-import ChatModel from './chatModel.js'
-import OrderModel from './orderModel.js'
-import ProductModel from './productModel.js'
-import SellModel from './sellModel.js'
-import ShippingModel from './shippingModel.js'
-import ShopModel from './shopModel.js'
-import TaxesModel from './taxesModel.js'
-import UserModel from './userModel.js'
+import Chat from './Chat.js'
+import Order from './Order.js'
+import Product from './Product.js'
+import Sell from './Sell.js'
+import Shipping from './Shipping.js'
+import Shop from './Shop.js'
+import Taxes from './Taxes.js'
+import User from './User.js'
 
-export default {
-  ChatModel,
-  OrderModel,
-  ProductModel,
-  SellModel,
-  ShippingModel,
-  ShopModel,
-  TaxesModel,
-  UserModel
-}
+
+export const models = [
+  User,
+  Shop,
+  Product,
+  Sell,
+  Order,
+  Shipping,
+  Chat,
+  Taxes
+]
