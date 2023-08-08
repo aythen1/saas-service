@@ -7,5 +7,4 @@ const inputServiceRoute = Router()
 inputServiceRoute.post('/create', createService)
 inputServiceRoute.put('/delete', deleteService)
 
-
 export default inputServiceRoute

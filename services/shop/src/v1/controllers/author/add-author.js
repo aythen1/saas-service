@@ -13,6 +13,6 @@ export const addAuthor = async (req, res, next) => {
         .json({ message: 'Author creado correctamente ', newAuthor })
     }
   } catch (error) {
-    return res.status(404).json({ mesagge: error.message })
+    return next(error)
   }
 }

@@ -1,10 +1,6 @@
-import { User, Shop } from '../../database/connection/connectionDB.js'
+import { Shop } from '../../database/connection/connectionDB.js'
 
-
-
-
-
-export const createShop = async (req, res) => {
+export const createShop = async (req, res, next) => {
   const data = req.body
   /*
     {
@@ -33,8 +29,7 @@ export const createShop = async (req, res) => {
   try {
     const carga = await Shop.create(data)
     res.json({ message: 'result', carga })
-  } catch (err) {
-    console.log(err)
+  } catch (error) {
+    return next(error)
   }
 }
-

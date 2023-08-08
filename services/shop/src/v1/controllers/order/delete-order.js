@@ -1,6 +1,6 @@
 import { Order } from '../../database/connection/connectionDB.js'
 
-export const deleteOrder = async (req, res) => {
+export const deleteOrder = async (req, res, next) => {
   const { id } = req.params
   const order = await Order.findByPk(id)
 
@@ -12,6 +12,6 @@ export const deleteOrder = async (req, res) => {
     await Order.update({ isDisable: true }, { where: id })
     return res.send(`The orderId: ${id} was succesful deleted`)
   } catch (error) {
-    return res.status(404).send(error.message)
+    return next(error)
   }
 }

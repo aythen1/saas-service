@@ -1,6 +1,6 @@
 import { Author } from '../../database/connection/connectionDB.js'
 
-export const deleteAuthor = async (req, res) => {
+export const deleteAuthor = async (req, res, next) => {
   const { id } = req.params
   const author = await Author.findByPk(id)
 
@@ -14,6 +14,6 @@ export const deleteAuthor = async (req, res) => {
     console.log(updated)
     return res.send(`The AuthorID: ${id} was succesful deleted`)
   } catch (error) {
-    return res.status(404).send(error.message)
+    return next(error)
   }
 }

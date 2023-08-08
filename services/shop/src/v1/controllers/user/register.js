@@ -17,8 +17,8 @@ const register = async (req, res, next) => {
       const [user, isCreated] = await User.findOrCreate({ where: { email }, defaults: { name, email, password: hashPassword(password, bcrypt) } })
       isCreated ? res.json({ status: 200, message: 'usuario registrado correctamente', user }) : res.json({ status: 404, message: 'esta cuenta ya existe' })
     }
-  } catch (err) {
-    console.log({ message: 'ocurrio un error', err })
+  } catch (error) {
+    return next(error)
   }
 }
 

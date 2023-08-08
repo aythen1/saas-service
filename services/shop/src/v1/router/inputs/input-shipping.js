@@ -1,7 +1,6 @@
-import { Router } from "express"
-import { addShipping } from "../../controllers/shipping/add-shipping.js"
-import { deleteShipping } from "../../controllers/shipping/delete-shipping.js"
-
+import { Router } from 'express'
+import { addShipping } from '../../controllers/shipping/add-shipping.js'
+import { deleteShipping } from '../../controllers/shipping/delete-shipping.js'
 
 const inputShippingRouter = Router()
 

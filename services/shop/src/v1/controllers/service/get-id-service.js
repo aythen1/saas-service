@@ -1,13 +1,11 @@
-import { Service, User } from "../../database/connection/connectionDB.js"
+import { Service } from '../../database/connection/connectionDB.js'
 
+export const getServiceByIdUser = async (req, res, next) => {
+  const { idUser } = req.params
 
+  if (!idUser) return res.status(404).json({ message: 'debe proporcionar el id del usuario' })
 
-
-export const getServiceByIdUser = async (req, res) => {
-    const { idUser } = req.params
-
-    if(!idUser) return res.status(404).json({message:'debe proporcionar el id del usuario'})
-
+  try {
     const consult = await Service.findAll({
       where: {
         UserId: idUser
@@ -19,4 +17,7 @@ export const getServiceByIdUser = async (req, res) => {
       consult,
       idUser
     })
+  } catch (error) {
+    return next(error)
   }
+}

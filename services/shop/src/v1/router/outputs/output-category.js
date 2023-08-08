@@ -1,7 +1,6 @@
-import { Router } from "express"
-import { getAllCategory } from "../../controllers/category/get-all-category.js"
-import { getCategoryByPk } from "../../controllers/category/get-id-category.js"
-
+import { Router } from 'express'
+import { getAllCategory } from '../../controllers/category/get-all-category.js'
+import { getCategoryByPk } from '../../controllers/category/get-id-category.js'
 
 const outPutCategoryRouter = Router()
 

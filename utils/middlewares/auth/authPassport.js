@@ -1,29 +1,23 @@
-
-
-
 const passportAuthenticator = (UserModel, passport, LocalStrategy, bcrypt) => {
-
-  
   const compare = (pass, passHash) => {
     // console.log(bcrypt.compareSync(pass,passHash))
     return bcrypt.compareSync(pass, passHash)
   }
 
-
   passport.serializeUser((user, done) => {
     done(null, user.id)
   })
-  
+
   passport.deserializeUser((id, done) => {
     const user = UserModel.findOne({
       where: {
         id
       }
     })
-  
+
     done(null, user)
   })
-  
+
   // Local Strategy
   passport.use(
     new LocalStrategy({
@@ -36,20 +30,19 @@ const passportAuthenticator = (UserModel, passport, LocalStrategy, bcrypt) => {
           email
         }
       })
-  
+
       if (!findUser) {
         return done(null, false, 'Incorrect email')
       }
-  
+
       if (!await compare(password, findUser.password)) {
         return done(null, false, 'Incorrect password')
       }
-  
+
       return done(null, findUser, 'Usuario ingresado con exito')
     })
   )
 }
-
 
 function isAuthenticated (req, res, next) {
   if (req.isAuthenticated()) {
@@ -67,5 +60,5 @@ const hashPassword = (pass, bcrypt) => {
 export {
   hashPassword,
   passportAuthenticator,
-  isAuthenticated,
+  isAuthenticated
 }

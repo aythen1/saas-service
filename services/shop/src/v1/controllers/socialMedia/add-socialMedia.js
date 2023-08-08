@@ -13,6 +13,6 @@ export const addSocialMedia = async (req, res, next) => {
         .json({ message: 'SocialMedia creado correctamente ', newSocialMedia })
     }
   } catch (error) {
-    return res.status(404).json({ mesagge: error.message })
+    return next(error)
   }
 }

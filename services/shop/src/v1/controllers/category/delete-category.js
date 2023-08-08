@@ -1,6 +1,6 @@
 import { Category } from '../../database/connection/connectionDB.js'
 
-export const deleteCategory = async (req, res) => {
+export const deleteCategory = async (req, res, next) => {
   const { id } = req.params
   const category = await Category.findByPk(id)
 
@@ -12,6 +12,6 @@ export const deleteCategory = async (req, res) => {
     await Category.update({ isDisable: true }, { where: id })
     return res.send(`The categoryId: ${id} was succesful deleted`)
   } catch (error) {
-    return res.status(404).send(error.message)
+    return next(error)
   }
 }

@@ -4,8 +4,8 @@ export default (sequelize) => {
   return sequelize.define('Delivery', {
     name: {
       type: DataTypes.STRING,
-        allowNull:false
-    },
+      allowNull: false
+    }
     // licenseNumber: {
     //   type: DataTypes.INTEGER
     // },

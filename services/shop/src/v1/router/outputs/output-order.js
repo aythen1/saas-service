@@ -1,6 +1,5 @@
-import { Router } from "express"
-import { getOrderByPk } from "../../controllers/order/get-id-order.js"
-
+import { Router } from 'express'
+import { getOrderByPk } from '../../controllers/order/get-id-order.js'
 
 const outPutOrderRouter = Router()
 

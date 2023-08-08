@@ -7,15 +7,15 @@ export default (sequelize) => {
       allowNull: false
     },
     fee: {
-      type: DataTypes.INTEGER,
-     // allowNull: false
+      type: DataTypes.INTEGER
+      // allowNull: false
     },
     total: {
-      type: DataTypes.INTEGER,
-     // allowNull: false
+      type: DataTypes.INTEGER
+      // allowNull: false
     },
     date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATE
     //  allowNull: false
     },
     status: {
@@ -23,7 +23,7 @@ export default (sequelize) => {
       allowNull: false
     },
     adress: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     //  allowNull: false
     }
   })
