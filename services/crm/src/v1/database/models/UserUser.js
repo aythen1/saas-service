@@ -9,7 +9,7 @@ export default (sequelize) => {
       type: DataTypes.ENUM('low', 'medium', 'high')
     },
     rating: {
-      type: DataTypes.ENUM(1, 2, 3, 4, 5)
+      type: DataTypes.ENUM('1', '2', '3', '4', '5')
     }
   })
 }
