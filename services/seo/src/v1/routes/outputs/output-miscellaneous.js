@@ -5,7 +5,7 @@ const outputMiscellaneousRoutes = Router()
 
 /**
  * @swagger
- * /api-v1/miscellaneous/{id}:
+ * /api-v1/output/miscellaneous/{id}:
  *   get:
  *     description: Returns miscellaneous by id
  *     parameters:

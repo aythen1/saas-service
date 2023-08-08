@@ -5,7 +5,7 @@ const outputSecurityRoutes = Router()
 
 /**
  * @swagger
- * /api-v1/security/{id}:
+ * /api-v1/output/security/{id}:
  *   get:
  *     description: Returns security by id
  *     parameters:

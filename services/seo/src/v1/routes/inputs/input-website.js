@@ -9,6 +9,19 @@ inputWebsiteRoutes.post('/', addWebsite)
 
 inputWebsiteRoutes.put('/:id', updateWebsite)
 
-inputWebsiteRoutes.put('/:id', deleteWebsite)
+/**
+ * @swagger
+ * /api-v1/input/website/delete/:id:
+ *   put:
+ *     description: Delete website
+ *     tags:
+ *      - Websites
+ *     produces:
+ *      - application/json
+ *     responses:
+ *       201:
+ *         description: website
+ */
+inputWebsiteRoutes.put('/delete/:id', deleteWebsite)
 
 export default inputWebsiteRoutes

@@ -12,13 +12,13 @@ import inputSeoRoutes from './inputs/input-seo.js'
 const index = Router()
 
 index.use('/docs', swagger)
-index.use('/user', outputUserRoutes)
-index.use('/user', userInputRoutes)
-index.use('/website', outputWebsiteRoutes)
+index.use('/output/user', outputUserRoutes)
+index.use('/input/user', userInputRoutes)
+index.use('/output/website', outputWebsiteRoutes)
 index.use('/output/seo', outputSeoRoutes)
 index.use('/input/seo', inputSeoRoutes)
-index.use('/security', outputSecurityRoutes)
-index.use('/performance', outputPerformanceRoutes)
-index.use('/miscellaneous', outputMiscellaneousRoutes)
+index.use('/output/security', outputSecurityRoutes)
+index.use('/output/performance', outputPerformanceRoutes)
+index.use('/output/miscellaneous', outputMiscellaneousRoutes)
 
 export default index

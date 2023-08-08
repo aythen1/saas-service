@@ -5,7 +5,7 @@ const outputSeoRoutes = Router()
 
 /**
  * @swagger
- * /api-v1/seo/{id}:
+ * /api-v1/output/seo/{id}:
  *   get:
  *     description: Returns seo by id
  *     parameters:
