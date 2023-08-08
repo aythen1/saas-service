@@ -10,6 +10,10 @@ import Group from './Group.js'
 import Category from './Category.js'
 import Author from './Author.js'
 import SocialMedia from './SocialMedia.js'
+import Delivery from './Delivery.js'
+import Service from './Service.js'
+import Speciality from './Speciality.js'
+import Review from './Review.js'
 
 export const models = [
   User,
@@ -23,5 +27,9 @@ export const models = [
   Group,
   Category,
   Author,
-  SocialMedia
+  SocialMedia,
+  Delivery,
+  Service,
+  Speciality,
+  Review
 ]
