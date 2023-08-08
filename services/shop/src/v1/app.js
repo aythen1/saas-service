@@ -3,6 +3,8 @@ import morgan from 'morgan'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import passport from 'passport'
+import { Strategy } from 'passport-local'
+import bcrypt from 'bcrypt'
 import session from 'express-session'
 import fileDirName from './file-dir-name.js'
 import path from 'path'
@@ -14,7 +16,7 @@ import index from './router/index.js'
 const { __dirname, __filename } = fileDirName(import.meta)
 
 
-passportAuthenticator(User)
+passportAuthenticator(User, passport, Strategy, bcrypt)
 
 const app = express()
 
