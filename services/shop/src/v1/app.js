@@ -6,10 +6,15 @@ import passport from 'passport'
 import session from 'express-session'
 import fileDirName from './file-dir-name.js'
 import path from 'path'
+import { passportAuthenticator } from '../../../../utils/middlewares/auth/authPassport.js'
+import { User } from './database/connection/connectionDB.js'
 
 import index from './router/index.js'
 
 const { __dirname, __filename } = fileDirName(import.meta)
+
+
+passportAuthenticator(User)
 
 const app = express()
 

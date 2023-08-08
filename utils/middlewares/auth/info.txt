@@ -1,7 +1,13 @@
-import { hashPassword, userModel } from '../../../../../../utils/middlewares/auth/bcrypt.js'
+Se debe agregar el controlador register con la siguiente config:
+
+import { hashPassword, userModel } from '../../../../../utils/middlewares/auth/bcrypt.js'
 import { User } from '../../database/connection/connectionDB.js'
 
-// se debe utilizar el modelo User de cada servicio
+ se debe utilizar el modelo User de cada servicio e impotarlo de manera adecuada
+
+
+codigo ejemplo:
+
 
 const register = async (req, res, next) => {
   const { name, email, password } = req.body
