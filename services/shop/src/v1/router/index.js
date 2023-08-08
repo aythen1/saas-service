@@ -21,6 +21,13 @@ import inputAuthorRoute from './inputs/input-author.js'
 import outputAuthorRoute from './outputs/output-author.js'
 import inputSocialMedia from './inputs/input-socialMedia.js'
 import outputSocialMedia from './outputs/output-socialMedia.js'
+import inputServiceRoute from './inputs/input-service.js'
+import outPutServiceRouter from './outputs/output-service.js'
+import inputSpecialityRouter from './inputs/input-speciality.js'
+import outPutSpecialityRouter from './outputs/output-speciality.js'
+import inputReviewRouter from './inputs/input-review.js'
+import outPutReviewRouter from './outputs/output-review.js'
+
 const index = Router()
 
 index.use('/', swagger)
@@ -43,6 +50,12 @@ index.use('/author', inputAuthorRoute)
 index.use('/author', outputAuthorRoute)
 index.use('/socialMedia', inputSocialMedia)
 index.use('/socialMedia', outputSocialMedia)
+index.use('/service', inputServiceRoute)
+index.use('/service', outPutServiceRouter)
+index.use('/speciality', inputSpecialityRouter)
+index.use('/speciality', outPutSpecialityRouter)
+index.use('/review', inputReviewRouter)
+index.use('/review', outPutReviewRouter)
 
 index.use('/index', routerUser)
 index.get('/', (req, res) => {

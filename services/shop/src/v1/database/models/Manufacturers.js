@@ -1,18 +1,20 @@
 import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  return sequelize.define('Category', {
+  return sequelize.define('Manufacturers', {
+    logo: {
+      type: DataTypes.STRING
+    },
+    coverImage: {
+      type: DataTypes.STRING
+    },
     name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    image: {
       type: DataTypes.STRING
     },
-    details: {
+    website: {
       type: DataTypes.STRING
     },
-    icon: {
+    description: {
       type: DataTypes.STRING
     }
   })

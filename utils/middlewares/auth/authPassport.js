@@ -1,10 +1,15 @@
-import passport from 'passport'
-import { Strategy as LocalStrategy } from 'passport-local'
-import { compare } from './bcrypt.js'
 
 
 
-const passportAuthenticator = (UserModel) => {
+const passportAuthenticator = (UserModel, passport, LocalStrategy, bcrypt) => {
+
+  
+  const compare = (pass, passHash) => {
+    // console.log(bcrypt.compareSync(pass,passHash))
+    return bcrypt.compareSync(pass, passHash)
+  }
+
+
   passport.serializeUser((user, done) => {
     done(null, user.id)
   })
@@ -46,26 +51,6 @@ const passportAuthenticator = (UserModel) => {
 }
 
 
-// Ruta de inicio de sesión
-function login (req, res, next) {
-  const userReq = req.body // {email:'',pass:''}
-  passport.authenticate('local', { failureRedirect: '/login-fail', successRedirect: '/' }, (err, user, message) => {
-    // console.log({messageError})
-    if (err) {
-      return next(err)
-    }
-    if (!user) {
-      return res.status(401).json({ message })
-    }
-    req.login(user, (err) => {
-      if (err) {
-        return next(err)
-      }
-      res.json({ message: 'Inicio de sesión exitoso', user }) // user{id,emil,name,...etc}
-    })
-  })(req, res, next)
-}
-
 function isAuthenticated (req, res, next) {
   if (req.isAuthenticated()) {
     return next()
@@ -73,9 +58,14 @@ function isAuthenticated (req, res, next) {
   res.status(401).json({ message: 'Acceso no autorizado' })
 }
 
+const hashPassword = (pass, bcrypt) => {
+  return bcrypt.hashSync(pass, 10, (err, hash) => {
+    return err || hash
+  })
+}
+
 export {
-  passport,
+  hashPassword,
   passportAuthenticator,
   isAuthenticated,
-  login
 }

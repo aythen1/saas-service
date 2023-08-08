@@ -6,10 +6,22 @@ import Shipping from './Shipping.js'
 import Shop from './Shop.js'
 import Taxes from './Taxes.js'
 import User from './User.js'
-import Group from './Group.js'
-import Category from './Category.js'
+import Answer from './Answer.js'
+import Attribute from './Attribute.js'
 import Author from './Author.js'
+import Banner from './Banner.js'
+import Category from './Category.js'
+import Coupon from './Coupon.js'
+import Group from './Group.js'
+import Manufacturers from './Manufacturers.js'
+import Question from './Question.js'
 import SocialMedia from './SocialMedia.js'
+import Tag from './Tag.js'
+import Withdrawals from './Withdrawals.js'
+import Delivery from './Delivery.js'
+import Service from './Service.js'
+import Speciality from './Speciality.js'
+import Review from './Review.js'
 
 export const models = [
   User,
@@ -20,8 +32,20 @@ export const models = [
   Shipping,
   Chat,
   Taxes,
-  Group,
-  Category,
+  Answer,
+  Attribute,
   Author,
-  SocialMedia
+  Banner,
+  Category,
+  Coupon,
+  Group,
+  Manufacturers,
+  Question,
+  SocialMedia,
+  Tag,
+  Withdrawals,
+  Delivery,
+  Service,
+  Speciality,
+  Review
 ]

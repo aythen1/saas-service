@@ -1,12 +1,12 @@
 import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  return sequelize.define('SocialMedia', {
+  return sequelize.define('Attribute', {
     name: {
       type: DataTypes.STRING
     },
-    profileUrl: {
-      type: DataTypes.STRING
+    value: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
     }
   })
 }

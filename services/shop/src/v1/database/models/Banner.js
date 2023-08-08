@@ -1,12 +1,15 @@
 import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  return sequelize.define('SocialMedia', {
-    name: {
+  return sequelize.define('Banner', {
+    tittle: {
       type: DataTypes.STRING
     },
-    profileUrl: {
+    description: {
       type: DataTypes.STRING
+    },
+    gallery: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
     }
   })
 }
