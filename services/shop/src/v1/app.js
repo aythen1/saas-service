@@ -13,8 +13,7 @@ import { User } from './database/connection/connectionDB.js'
 
 import index from './router/index.js'
 
-const { __dirname, __filename } = fileDirName(import.meta)
-
+const { __dirname } = fileDirName(import.meta)
 
 passportAuthenticator(User, passport, Strategy, bcrypt)
 
@@ -41,6 +40,16 @@ app.use(passport.session())
 app.use(passport.authenticate('session'))
 
 app.use('/', index) // http://localhost:4009/
+
+// control centralizado de errores.
+
+app.use((err, req, res, next) => {
+  // eslint-disable-line no-unused-vars
+  const status = err.status || 500
+  const message = err.message || err
+  console.error(err)
+  res.status(status).send(message)
+})
 
 app.get('/root', (req, res) => { // http://localhost:4009/root
   res.json({

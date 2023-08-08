@@ -4,7 +4,7 @@ export default (sequelize) => {
   return sequelize.define('Service', {
     name: {
       type: DataTypes.STRING,
-        allowNull:false
+      allowNull: false
     },
     licenseNumber: {
       type: DataTypes.INTEGER
@@ -21,6 +21,6 @@ export default (sequelize) => {
     },
     gallery: {
       type: DataTypes.ARRAY(DataTypes.STRING)
-    },
+    }
   })
 }

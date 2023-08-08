@@ -1,6 +1,6 @@
 import { Group } from '../../database/connection/connectionDB.js'
 
-export const deleteGroup = async (req, res) => {
+export const deleteGroup = async (req, res, next) => {
   const { id } = req.params
   const group = await Group.findByPk(id)
 
@@ -12,6 +12,6 @@ export const deleteGroup = async (req, res) => {
     await Group.update({ isDisable: true }, { where: id })
     return res.send(`The groupId: ${id} was succesful deleted`)
   } catch (error) {
-    return res.status(404).send(error.message)
+    return next(error)
   }
 }

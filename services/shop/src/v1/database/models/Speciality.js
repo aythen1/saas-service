@@ -4,7 +4,7 @@ export default (sequelize) => {
   return sequelize.define('Speciality', {
     name: {
       type: DataTypes.STRING,
-        allowNull:false
-    },
+      allowNull: false
+    }
   })
 }

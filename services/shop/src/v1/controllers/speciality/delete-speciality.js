@@ -1,6 +1,6 @@
 import { Speciality } from '../../database/connection/connectionDB.js'
 
-export const deleteSpeciality = async (req, res) => {
+export const deleteSpeciality = async (req, res, next) => {
   const { id } = req.params
   const speciality = await Speciality.findByPk(id)
 
@@ -12,6 +12,6 @@ export const deleteSpeciality = async (req, res) => {
     await Speciality.update({ isDisable: true }, { where: { id } })
     return res.send(`The specialityId: ${id} was succesful deleted`)
   } catch (error) {
-    return res.status(404).send(error.message)
+    return next(error)
   }
 }
