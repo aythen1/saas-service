@@ -1,5 +1,7 @@
+import { hashPassword, userModel } from '../../../../../../utils/middlewares/auth/bcrypt.js'
 import { User } from '../../database/connection/connectionDB.js'
-import { hashPassword } from '../services/bcrypt.js'
+
+// se debe utilizar el modelo User de cada servicio
 
 const register = async (req, res, next) => {
   const { name, email, password } = req.body

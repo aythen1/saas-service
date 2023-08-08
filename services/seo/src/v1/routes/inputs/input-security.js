@@ -6,6 +6,19 @@ const inputSecurityRoutes = Router()
 
 inputSecurityRoutes.post('/', addSecurity)
 
-inputSecurityRoutes.put('/', deleteSecurity)
+/**
+ * @swagger
+ * /api-v1/input/security/delete/:id:
+ *   put:
+ *     description: Delete security
+ *     tags:
+ *      - Security
+ *     produces:
+ *      - application/json
+ *     responses:
+ *       201:
+ *         description: security
+ */
+inputSecurityRoutes.put('/delete/:id', deleteSecurity)
 
 export default inputSecurityRoutes

@@ -6,7 +6,7 @@ const outputUserRoutes = Router()
 
 /**
  * @swagger
- * /api-v1/user:
+ * /api-v1/output/user:
  *   get:
  *     description: Returns users
  *     tags:
@@ -21,7 +21,7 @@ outputUserRoutes.get('/', getAllUsers)
 
 /**
  * @swagger
- * /api-v1/user/{id}:
+ * /api-v1/output/user/{id}:
  *   get:
  *     description: Returns user by id
  *     parameters:

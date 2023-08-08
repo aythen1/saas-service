@@ -10,7 +10,7 @@ export default (sequelize) => {
       type: DataTypes.STRING
     },
     contentKeywords: {
-      type: DataTypes.STRING
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     imageKeywords: {
       type: DataTypes.ARRAY(DataTypes.STRING)
@@ -19,13 +19,13 @@ export default (sequelize) => {
       type: DataTypes.STRING
     },
     page404: {
-      type: DataTypes.STRING
+      type: DataTypes.BOOLEAN
     },
     robotsTxt: {
       type: DataTypes.STRING
     },
     noindex: {
-      type: DataTypes.STRING
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     linksOnPage: {
       type: DataTypes.ARRAY(DataTypes.STRING)

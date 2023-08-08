@@ -6,6 +6,19 @@ const inputMiscellaneousRoutes = Router()
 
 inputMiscellaneousRoutes.post('/', addMiscellaneous)
 
-inputMiscellaneousRoutes.put('/:id', deleteMiscellaneous)
+/**
+ * @swagger
+ * /api-v1/input/miscellanous/delete/:id:
+ *   put:
+ *     description: Delete miscellanous
+ *     tags:
+ *      - Miscellanous
+ *     produces:
+ *      - application/json
+ *     responses:
+ *       201:
+ *         description: miscellanous
+ */
+inputMiscellaneousRoutes.put('/delete/:id', deleteMiscellaneous)
 
 export default inputMiscellaneousRoutes

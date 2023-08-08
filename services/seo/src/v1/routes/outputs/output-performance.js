@@ -5,7 +5,7 @@ const outputPerformanceRoutes = Router()
 
 /**
  * @swagger
- * /api-v1/performance/{id}:
+ * /api-v1/output/performance/{id}:
  *   get:
  *     description: Returns performance by id
  *     parameters:

@@ -2,10 +2,11 @@ import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
   return sequelize.define('Category', {
-    image: {
-      type: DataTypes.STRING
-    },
     name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    image: {
       type: DataTypes.STRING
     },
     details: {

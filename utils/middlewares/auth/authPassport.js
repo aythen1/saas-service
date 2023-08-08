@@ -1,46 +1,50 @@
 import passport from 'passport'
 import { Strategy as LocalStrategy } from 'passport-local'
-import { User } from '../../database/connection/connectionDB.js'
-import { compare } from 'bcrypt'
+import { compare } from './bcrypt.js'
 
-passport.serializeUser((user, done) => {
-  done(null, user.id)
-})
 
-passport.deserializeUser((id, done) => {
-  const user = User.findOne({
-    where: {
-      id
-    }
+
+const passportAuthenticator = (UserModel) => {
+  passport.serializeUser((user, done) => {
+    done(null, user.id)
   })
-
-  done(null, user)
-})
-
-// Local Strategy
-passport.use(
-  new LocalStrategy({
-    usernameField: 'email', // 'email'
-    passwordField: 'password',
-    passReqToCallback: true
-  }, async (req, email, password, done) => {
-    const findUser = await User.findOne({
+  
+  passport.deserializeUser((id, done) => {
+    const user = UserModel.findOne({
       where: {
-        email
+        id
       }
     })
-
-    if (!findUser) {
-      return done(null, false, 'Incorrect email')
-    }
-
-    if (!await compare(password, findUser.password)) {
-      return done(null, false, 'Incorrect password')
-    }
-
-    return done(null, findUser, 'Usuario ingresado con exito')
+  
+    done(null, user)
   })
-)
+  
+  // Local Strategy
+  passport.use(
+    new LocalStrategy({
+      usernameField: 'email', // 'email'
+      passwordField: 'password',
+      passReqToCallback: true
+    }, async (req, email, password, done) => {
+      const findUser = await UserModel.findOne({
+        where: {
+          email
+        }
+      })
+  
+      if (!findUser) {
+        return done(null, false, 'Incorrect email')
+      }
+  
+      if (!await compare(password, findUser.password)) {
+        return done(null, false, 'Incorrect password')
+      }
+  
+      return done(null, findUser, 'Usuario ingresado con exito')
+    })
+  )
+}
+
 
 // Ruta de inicio de sesión
 function login (req, res, next) {
@@ -71,6 +75,7 @@ function isAuthenticated (req, res, next) {
 
 export {
   passport,
+  passportAuthenticator,
   isAuthenticated,
   login
 }

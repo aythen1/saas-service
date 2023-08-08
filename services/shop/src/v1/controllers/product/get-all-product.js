@@ -1,10 +1,34 @@
-import { Product } from "../../database/connection/connectionDB.js"
+import { Category, Group, Product, Shop } from "../../database/connection/connectionDB.js"
 
 
 export const productsFindAll = async (req, res, next) => {
     const { shopId } = req.params
-    const productsByShopId = await Product.findAll({ where: { ShopId: shopId } })
-    console.log(productsByShopId, ' q trae?')
+
+    const allProducts = await Product.findAll({  include: Shop })
+
+    const allProducts2 = allProducts.map(e =>  {
+      return {
+        id: e.id,
+        name: e.name,
+        gallery: e.gallery,
+        GroupId: e.GroupId,
+        CategoryId: e.CategoryId,
+        shops: e.Shops.map(i=> {
+          return {
+            id: i.id,
+            name: i.name,
+            UserId: i.UserId
+          }
+        })
+      }
+    })
+
+    const productsByShopId = allProducts2.filter(e => {
+      return e.shops.find(shop => {
+        return parseInt(shop.id) === parseInt(shopId)
+      })
+    })
+
 
     return productsByShopId
       ? res.status(200).json({ message: 'productos localizados', productsByShopId })
