@@ -1,4 +1,4 @@
-import { hashPassword, userModel } from '../../../../../utils/middlewares/auth/bcrypt.js'
+import { hashPassword, userModel } from '../../../../../../utils/middlewares/auth/bcrypt.js'
 import { User } from '../../database/connection/connectionDB.js'
 
 // se debe utilizar el modelo User de cada servicio
