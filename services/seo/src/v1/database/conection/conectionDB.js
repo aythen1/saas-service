@@ -26,19 +26,21 @@ export const {
   Website
 } = db.models
 
+// many to one relationship
 User.hasMany(Website)
 Website.belongsTo(User)
 
-Website.hasMany(Seo)
+// one on one relationship
+Website.hasOne(Seo)
 Seo.belongsTo(Website)
 
-Website.hasMany(Performance)
+Website.hasOne(Performance)
 Performance.belongsTo(Website)
 
-Website.hasMany(Security)
+Website.hasOne(Security)
 Security.belongsTo(Website)
 
-Website.hasMany(Miscellaneous)
+Website.hasOne(Miscellaneous)
 Miscellaneous.belongsTo(Website)
 
 Seo.hasOne(Headers)

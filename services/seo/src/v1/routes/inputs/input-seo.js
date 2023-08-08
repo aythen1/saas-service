@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import { addSeo } from '../../controllers/seo/add-seo'
-import { deleteSeo } from '../../controllers/seo/delete-seo'
+import { addSeo } from '../../controllers/seo/add-seo.js'
+import { deleteSeo } from '../../controllers/seo/delete-seo.js'
 
 const inputSeoRoutes = Router()
 
