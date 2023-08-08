@@ -2,7 +2,8 @@
   "name": "saas-service",
   "version": "0.0.1",
   "description": "services of aythen",
-  "private": "true",
+  "private": true,
+  "type": "module", 
   "workspaces": [
     "services/**"
   ],
@@ -23,6 +24,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "turbo": "^1.10.12"
   },
   "devDependencies": {
