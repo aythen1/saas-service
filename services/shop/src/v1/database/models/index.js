@@ -16,8 +16,15 @@ import Group from './Group.js'
 import Manufacturers from './Manufacturers.js'
 import Question from './Question.js'
 import SocialMedia from './SocialMedia.js'
+<<<<<<< HEAD
 import Tag from './Tag.js'
 import Withdrawals from './Withdrawals.js'
+=======
+import Delivery from './Delivery.js'
+import Service from './Service.js'
+import Speciality from './Speciality.js'
+import Review from './Review.js'
+>>>>>>> develop
 
 export const models = [
   User,
@@ -31,6 +38,7 @@ export const models = [
   Answer,
   Attribute,
   Author,
+<<<<<<< HEAD
   Banner,
   Category,
   Coupon,
@@ -40,4 +48,11 @@ export const models = [
   SocialMedia,
   Tag,
   Withdrawals
+=======
+  SocialMedia,
+  Delivery,
+  Service,
+  Speciality,
+  Review
+>>>>>>> develop
 ]

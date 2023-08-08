@@ -1,5 +1,6 @@
 import { Router } from 'express'
-import { passport, isAuthenticated, login } from '../../../../../../utils/middlewares/auth/authPassport.js'
+import { login } from '../../controllers/user/loginLogOut.js'
+import { isAuthenticated } from '../../../../../../utils/middlewares/auth/authPassport.js'
 
 const logInOut = Router()
 
