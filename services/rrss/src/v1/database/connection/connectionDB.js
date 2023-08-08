@@ -23,35 +23,10 @@ export const db = new Sequelize(
 models.forEach((model) => model(db))
 
 export const {
-  User,
-  Shop,
-  Product,
-  Sell,
-  Order,
-  Shipping,
-  Chat,
-  Taxes,
-  Answer,
-  Attribute,
-  Author,
-  Banner,
-  Category,
-  Coupon,
-  Group,
-  Manufacturers,
-  Question,
+  Post,
   SocialMedia,
-  Tag,
-  Withdrawals
+  User
 } = db.models
 
 // relaciones
-Shop.belongsTo(User)
-User.hasMany(Shop)
-
-// relacion muchos a muchos
-Shop.belongsToMany(Product, { through: 'Shop_Product' })
-Product.belongsToMany(Shop, { through: 'Shop_Product' })
-
-User.hasMany(Product)
-Product.belongsTo(User)
+// Completar relaciones
