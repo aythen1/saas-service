@@ -14,20 +14,18 @@ const swaggerOptions = {
   },
   basePath: '/',
   apis: [
-    './src/routes/outputs/output-user.js',
-    './src/routes/outputs/output-website.js',
-    './src/routes/outputs/output-seo.js',
-    './src/routes/outputs/output-security.js',
-    './src/routes/outputs/output-performance.js',
-    './src/routes/outputs/output-miscellaneous.js',
-    './src/routes/outputs/output-headers.js',
-    './src/routes/inputs/input-user.js',
-    './src/routes/inputs/input-website.js',
-    './src/routes/inputs/input-seo.js',
-    './src/routes/inputs/input-security.js',
-    './src/routes/inputs/input-performance.js',
-    './src/routes/inputs/input-miscellaneous.js',
-    './src/routes/inputs/input-headers.js'
+    './src/v1/routes/outputs/output-user.js',
+    './src/v1/routes/outputs/output-website.js',
+    './src/v1/routes/outputs/output-seo.js',
+    './src/v1/routes/outputs/output-security.js',
+    './src/v1/routes/outputs/output-performance.js',
+    './src/v1/routes/outputs/output-miscellaneous.js',
+    './src/v1/routes/inputs/input-user.js',
+    './src/v1/routes/inputs/input-website.js',
+    './src/v1/routes/inputs/input-seo.js',
+    './src/v1/routes/inputs/input-security.js',
+    './src/v1/routes/inputs/input-performance.js',
+    './src/v1/routes/inputs/input-miscellaneous.js'
   ]
 }
 

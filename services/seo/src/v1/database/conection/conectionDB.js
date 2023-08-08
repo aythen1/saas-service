@@ -4,15 +4,15 @@ import { models } from '../models/index.js'
 
 dotenv.config()
 
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_DATABASE } = process.env
+const { DB_NAME, DB_USERNAME, DB_PASSWORD, DB_HOST, DB_PORT, DB_DIALECT } =
+  process.env
 
-export const db = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_DATABASE}`,
-  {
-    logging: false,
-    native: false
-  }
-)
+export const db = new Sequelize(DB_NAME, DB_USERNAME, DB_PASSWORD, {
+  host: DB_HOST,
+  port: DB_PORT,
+  dialect: DB_DIALECT,
+  logging: false
+})
 
 models.forEach((model) => model(db))
 
@@ -26,19 +26,21 @@ export const {
   Website
 } = db.models
 
+// many to one relationship
 User.hasMany(Website)
 Website.belongsTo(User)
 
-Website.hasMany(Seo)
+// one on one relationship
+Website.hasOne(Seo)
 Seo.belongsTo(Website)
 
-Website.hasMany(Performance)
+Website.hasOne(Performance)
 Performance.belongsTo(Website)
 
-Website.hasMany(Security)
+Website.hasOne(Security)
 Security.belongsTo(Website)
 
-Website.hasMany(Miscellaneous)
+Website.hasOne(Miscellaneous)
 Miscellaneous.belongsTo(Website)
 
 Seo.hasOne(Headers)
