@@ -43,6 +43,10 @@ export default (sequelize) => {
     },
     rol: {
       type: DataTypes.ENUM('reseller', 'ambassador', 'user')
+    },
+    isDisable: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   })
 }
