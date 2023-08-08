@@ -25,20 +25,12 @@ models.forEach((model) => model(db))
 export const {
   User,
   Shop,
-  Product,
-  Order,
-  Sell,
-  Shipping,
-  Taxes,
-  Group,
-  Category,
-  Author,
-  SocialMedia
-
+  Product
+  
 
 } = db.models
 
- 
+
 
 // relaciones
 
@@ -65,11 +57,11 @@ Product.belongsTo(Author)
 Author.hasMany(SocialMedia)
 SocialMedia.belongsTo(Author)
 
-//relacion muchos a muchos
+// relacion muchos a muchos
 Shop.belongsToMany(Product, { through: 'Shop_Product' })
 Product.belongsToMany(Shop, { through: 'Shop_Product' })
 
-// User.hasMany(Product)
-// Product.belongsTo(User)
+User.hasMany(Product)
+Product.belongsTo(User)
 
 
