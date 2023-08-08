@@ -12,7 +12,7 @@ export default (sequelize) => {
       type: DataTypes.STRING
     },
     amount: {
-      type: DataTypes.NUMBER
+      type: DataTypes.INTEGER
     },
     activeFrom: {
       type: DataTypes.DATE
