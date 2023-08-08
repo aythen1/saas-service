@@ -6,7 +6,6 @@ import outputSeoRoutes from './outputs/output-seo.js'
 import outputSecurityRoutes from './outputs/output-security.js'
 import outputPerformanceRoutes from './outputs/output-performance.js'
 import outputMiscellaneousRoutes from './outputs/output-miscellaneous.js'
-import outputHeadersRoutes from './outputs/output-headers.js'
 import userInputRoutes from './inputs/input-user.js'
 import inputSeoRoutes from './inputs/input-seo.js'
 
@@ -21,6 +20,5 @@ index.use('/input/seo', inputSeoRoutes)
 index.use('/security', outputSecurityRoutes)
 index.use('/performance', outputPerformanceRoutes)
 index.use('/miscellaneous', outputMiscellaneousRoutes)
-index.use('/headers', outputHeadersRoutes)
 
 export default index
