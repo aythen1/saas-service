@@ -9,7 +9,9 @@ export const addCategory = async (req, res, next) => {
     try {
       const newCategory = await Category.create(req.body)
       return newCategory
-        ? res.status(200).json({ message: 'grupo creado exitosaente', newCategory })
+        ? res
+          .status(200)
+          .json({ message: 'grupo creado exitosaente', newCategory })
         : res.status(404).json({ mesage: 'ha ocurrido un problema' })
     } catch (error) {
       return next(error)
