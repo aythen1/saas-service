@@ -4,9 +4,6 @@ export default (sequelize) => {
   return sequelize.define('SocialMedia', {
     name: {
       type: DataTypes.STRING
-    },
-    profileUrl: {
-      type: DataTypes.STRING
     }
   })
 }

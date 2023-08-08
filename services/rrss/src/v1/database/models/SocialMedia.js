@@ -1,19 +1,18 @@
 import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  return sequelize.define('Category', {
+  return sequelize.define('SocialMedia', {
     name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    image: {
       type: DataTypes.STRING
     },
-    details: {
+    logo: {
       type: DataTypes.STRING
     },
-    icon: {
+    email: {
       type: DataTypes.STRING
+    },
+    password: {
+      type: DataTypes.DATE
     }
   })
 }

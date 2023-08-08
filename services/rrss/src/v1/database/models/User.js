@@ -1,18 +1,20 @@
 import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  return sequelize.define('Category', {
+  return sequelize.define('User', {
     name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    image: {
       type: DataTypes.STRING
     },
-    details: {
+    email: {
       type: DataTypes.STRING
     },
-    icon: {
+    password: {
+      type: DataTypes.STRING
+    },
+    timezone: {
+      type: DataTypes.DATE
+    },
+    avatar: {
       type: DataTypes.STRING
     }
   })

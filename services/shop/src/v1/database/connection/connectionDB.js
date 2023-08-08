@@ -26,29 +26,32 @@ export const {
   User,
   Shop,
   Product,
-  Order,
   Sell,
+  Order,
   Shipping,
+  Chat,
   Taxes,
-  Group,
-  Category,
+  Answer,
+  Attribute,
   Author,
+  Banner,
+  Category,
+  Coupon,
+  Group,
+  Manufacturers,
+  Question,
   SocialMedia,
+  Tag,
+  Withdrawals,
   Delivery,
   Service,
   Speciality,
   Review
-
-
 } = db.models
-
- 
 
 // relaciones
 
-//relacion uno a uno
-
-
+// relacion uno a uno
 
 Product.belongsTo(Order)
 Order.belongsTo(Product)
@@ -57,10 +60,9 @@ Shipping.belongsTo(Product)
 Shipping.belongsTo(Order)
 Order.belongsTo(Shipping)
 
-//relacion uno a muchos
+// relacion uno a muchos
 
-
-//asociaciones para las tiendas
+// asociaciones para las tiendas
 User.hasMany(Shop)
 Shop.belongsTo(User)
 Group.hasMany(Product)
@@ -74,20 +76,13 @@ Service.belongsTo(User)
 Service.hasMany(Review)
 Review.belongsTo(Service)
 
-
 Author.hasMany(Product)
 Product.belongsTo(Author)
 
 Author.hasMany(SocialMedia)
 SocialMedia.belongsTo(Author)
 
-
-
-
-
-
-//relacion muchos a muchos
-
+// relacion muchos a muchos
 
 Shop.belongsToMany(Product, { through: 'Shop_Product' })
 Product.belongsToMany(Shop, { through: 'Shop_Product' })
@@ -97,5 +92,3 @@ Speciality.belongsToMany(Service, { through: 'Service_Speciality' })
 
 // User.hasMany(Product)
 // Product.belongsTo(User)
-
-

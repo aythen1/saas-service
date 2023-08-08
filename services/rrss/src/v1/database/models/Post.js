@@ -1,18 +1,20 @@
 import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  return sequelize.define('Category', {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    image: {
+  return sequelize.define('Post', {
+    photo: {
       type: DataTypes.STRING
     },
-    details: {
+    video: {
       type: DataTypes.STRING
     },
-    icon: {
+    link: {
+      type: DataTypes.STRING
+    },
+    text: {
+      type: DataTypes.STRING
+    },
+    caption: {
       type: DataTypes.STRING
     }
   })

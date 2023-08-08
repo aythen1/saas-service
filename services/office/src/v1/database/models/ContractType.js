@@ -1,18 +1,17 @@
 import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
-  return sequelize.define('Category', {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    image: {
+  return sequelize.define('ContractType', {
+    lightLogo: {
       type: DataTypes.STRING
     },
-    details: {
+    darkLogo: {
       type: DataTypes.STRING
     },
-    icon: {
+    invoiceFooterTitle: {
+      type: DataTypes.STRING
+    },
+    invoiceFooterNote: {
       type: DataTypes.STRING
     }
   })
