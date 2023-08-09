@@ -2,10 +2,10 @@ import { DataTypes } from 'sequelize'
 
 export default (sequelize) => {
   return sequelize.define('Call', {
-    name_transmitter: {
+    nameTransmitter: {
       type: DataTypes.STRING()
     },
-    name_receiver: {
+    nameReceiver: {
       type: DataTypes.STRING()
     },
     duration: {
@@ -16,6 +16,10 @@ export default (sequelize) => {
     },
     stars: {
       type: DataTypes.ENUM('1', '2', '3', '4', '5')
+    },
+    isDisable: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   })
 }
