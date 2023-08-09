@@ -14,10 +14,8 @@ import outputCallRoutes from './outputs/output-call.js'
 
 const index = Router()
 
-index.use('/', swagger)
-index.use('/index', routerUser)
-
 index
+  .use('/docs', swagger)
   .use('/user', inputUserRoute, outputUserRoutes)
   .use('/event', inputEventRoutes, outputEventRoutes)
   .use('/payment', inputPaymentRoutes, outputPaymentRoutes)

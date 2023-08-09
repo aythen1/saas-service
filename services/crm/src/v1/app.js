@@ -16,7 +16,7 @@ app.get('/root', (req, res) => {
   })
 })
 
-app.use('/', index) // http://localhost:3001/
+app.use('/api-v1', index) // http://localhost:3001/
 
 // app.use('/', routes);
 

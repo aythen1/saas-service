@@ -13,12 +13,23 @@ const swaggerOptions = {
     }
   },
   basePath: '/',
-  apis: ['./router/user.js']
+  apis: [
+    './src/v1/router/outputs/output-user.js',
+    './src/v1/router/outputs/output-event.js',
+    './src/v1/router/outputs/output-note.js',
+    './src/v1/router/outputs/output-payment.js',
+    './src/v1/router/outputs/output-call.js',
+    './src/v1/router/inputs/input-user.js',
+    './src/v1/router/inputs/input-event.js',
+    './src/v1/router/inputs/input-note.js',
+    './src/v1/router/inputs/input-payment.js',
+    './src/v1/router/inputs/input-call.js'
+  ]
 }
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions)
 
-swagger.use('/docs', swaggerUi.serve)
-swagger.get('/docs', swaggerUi.setup(swaggerDocs))
+swagger.use('/', swaggerUi.serve)
+swagger.get('/', swaggerUi.setup(swaggerDocs))
 
 export default swagger
