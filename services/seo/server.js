@@ -12,6 +12,6 @@ server.use(app)
 
 server.listen(PORT || 4008, () => {
   db.sync({ force: true }).then(() =>
-    console.log(`Database Synchronized. Server on port: ${PORT || 4008}`)
+    console.log(`Database Synchronized { force: true }. Server on port: ${PORT || 4008}`)
   )
 })

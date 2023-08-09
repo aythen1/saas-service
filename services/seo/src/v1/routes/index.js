@@ -10,6 +10,7 @@ import userInputRoutes from './inputs/input-user.js'
 import inputSeoRoutes from './inputs/input-seo.js'
 import inputPerformanceRoutes from './inputs/input-performance.js'
 import inputSecurityRoutes from './inputs/input-security.js'
+import inputMiscellaneousRoutes from './inputs/input-miscellaneous.js'
 
 const index = Router()
 
@@ -20,6 +21,6 @@ index
   .use('/seo', outputSeoRoutes, inputSeoRoutes)
   .use('/security', outputSecurityRoutes, inputSecurityRoutes)
   .use('/performance', outputPerformanceRoutes, inputPerformanceRoutes)
-  .use('/miscellaneous', outputMiscellaneousRoutes)
+  .use('/miscellaneous', outputMiscellaneousRoutes, inputMiscellaneousRoutes)
 
 export default index

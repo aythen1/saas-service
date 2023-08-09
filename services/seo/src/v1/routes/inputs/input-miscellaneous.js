@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import { addMiscellaneous } from '../../controllers/miscellaneous/add-miscellaneous'
-import { deleteMiscellaneous } from '../../controllers/miscellaneous/delete-miscellaneous'
+import { addMiscellaneous } from '../../controllers/miscellaneous/add-miscellaneous.js'
+import { deleteMiscellaneous } from '../../controllers/miscellaneous/delete-miscellaneous.js'
 
 const inputMiscellaneousRoutes = Router()
 
