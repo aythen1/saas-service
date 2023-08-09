@@ -7,6 +7,10 @@ export default (sequelize) => {
     },
     date: {
       type: DataTypes.DATE()
+    },
+    isDisable: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   })
 }
