@@ -36,7 +36,7 @@ const userInputRoutes = Router()
 
 /**
  * @swagger
- * /api-v1/input/user:
+ * /api-v1/user:
  *   post:
  *     description: Create user
  *     tags:
@@ -70,9 +70,13 @@ userInputRoutes.put('/:id', updateUser)
 
 /**
  * @swagger
- * /api-v1/input/user/delete/:id:
+ * /api-v1/user/delete/{id}:
  *   put:
  *     description: Delete user
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
  *     tags:
  *      - Users
  *     produces:

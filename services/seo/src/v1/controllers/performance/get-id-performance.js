@@ -8,7 +8,7 @@ export const getPerformanceByPk = async (req, res) => {
     if (!performance) {
       return res.status(404).send(`The performanceId: ${id} doesn't exist`)
     }
-    return performance
+    return res.status(200).send(performance)
   } catch (error) {
     return res.status(404).send(error.message)
   }

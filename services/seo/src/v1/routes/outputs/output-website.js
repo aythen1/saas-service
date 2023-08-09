@@ -6,7 +6,7 @@ const outputWebsiteRoutes = Router()
 
 /**
  * @swagger
- * /api-v1/output/website:
+ * /api-v1/website:
  *   get:
  *     description: Returns websites
  *     tags:
@@ -21,7 +21,7 @@ outputWebsiteRoutes.get('/', getAllWebsites)
 
 /**
  * @swagger
- * /api-v1/output/website/{id}:
+ * /api-v1/website/{id}:
  *   get:
  *     description: Returns website by id
  *     parameters:

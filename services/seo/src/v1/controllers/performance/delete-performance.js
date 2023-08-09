@@ -1,4 +1,4 @@
-import { Performance } from '../../database/conection/conectionDB'
+import { Performance } from '../../database/conection/conectionDB.js'
 
 export const deletePerformance = async (req, res) => {
   const { id } = req.params

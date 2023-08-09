@@ -3,7 +3,7 @@ import { DataTypes } from 'sequelize'
 export default (sequelize) => {
   sequelize.define('Performance', {
     textCompression: {
-      type: DataTypes.BOOLEAN
+      type: DataTypes.FLOAT
     },
     loadTime: {
       type: DataTypes.FLOAT
@@ -11,10 +11,22 @@ export default (sequelize) => {
     pageSize: {
       type: DataTypes.FLOAT
     },
-    httpRequest: {
+    httpRequestJs: {
       type: DataTypes.ARRAY(DataTypes.STRING)
     },
-    imageFormat: {
+    httpRequestCss: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    httpRequestImages: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    imageFormatAvif: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    imageFormatWebP: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    imageFormatOther: {
       type: DataTypes.ARRAY(DataTypes.STRING)
     },
     javascriptDefer: {

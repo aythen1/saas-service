@@ -8,16 +8,20 @@ inputMiscellaneousRoutes.post('/', addMiscellaneous)
 
 /**
  * @swagger
- * /api-v1/input/miscellanous/delete/:id:
+ * /api-v1/miscellaneous/delete/{id}:
  *   put:
- *     description: Delete miscellanous
+ *     description: Delete miscellaneous
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
  *     tags:
- *      - Miscellanous
+ *      - Miscellaneous
  *     produces:
  *      - application/json
  *     responses:
  *       201:
- *         description: miscellanous
+ *         description: miscellaneous
  */
 inputMiscellaneousRoutes.put('/delete/:id', deleteMiscellaneous)
 

@@ -11,9 +11,13 @@ inputWebsiteRoutes.put('/:id', updateWebsite)
 
 /**
  * @swagger
- * /api-v1/input/website/delete/:id:
+ * /api-v1/website/delete/{id}:
  *   put:
  *     description: Delete website
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
  *     tags:
  *      - Websites
  *     produces:
