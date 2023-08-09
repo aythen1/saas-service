@@ -8,17 +8,17 @@ import outputPerformanceRoutes from './outputs/output-performance.js'
 import outputMiscellaneousRoutes from './outputs/output-miscellaneous.js'
 import userInputRoutes from './inputs/input-user.js'
 import inputSeoRoutes from './inputs/input-seo.js'
+import inputPerformanceRoutes from './inputs/input-performance.js'
 
 const index = Router()
 
-index.use('/docs', swagger)
-index.use('/output/user', outputUserRoutes)
-index.use('/input/user', userInputRoutes)
-index.use('/output/website', outputWebsiteRoutes)
-index.use('/output/seo', outputSeoRoutes)
-index.use('/input/seo', inputSeoRoutes)
-index.use('/output/security', outputSecurityRoutes)
-index.use('/output/performance', outputPerformanceRoutes)
-index.use('/output/miscellaneous', outputMiscellaneousRoutes)
+index
+  .use('/docs', swagger)
+  .use('/user', outputUserRoutes, userInputRoutes)
+  .use('/website', outputWebsiteRoutes)
+  .use('/seo', outputSeoRoutes, inputSeoRoutes)
+  .use('/security', outputSecurityRoutes)
+  .use('/performance', outputPerformanceRoutes, inputPerformanceRoutes)
+  .use('/miscellaneous', outputMiscellaneousRoutes)
 
 export default index

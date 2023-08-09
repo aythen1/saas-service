@@ -8,9 +8,13 @@ inputSecurityRoutes.post('/', addSecurity)
 
 /**
  * @swagger
- * /api-v1/input/security/delete/:id:
+ * /api-v1/security/delete/{id}:
  *   put:
  *     description: Delete security
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
  *     tags:
  *      - Security
  *     produces:

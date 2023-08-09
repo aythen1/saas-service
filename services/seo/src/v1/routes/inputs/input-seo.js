@@ -6,7 +6,7 @@ const inputSeoRoutes = Router()
 
 /**
  * @swagger
- * /api-v1/input/seo:
+ * /api-v1/seo:
  *   post:
  *     description: Create seo
  *     tags:
@@ -33,9 +33,13 @@ inputSeoRoutes.post('/', addSeo)
 
 /**
  * @swagger
- * /api-v1/input/seo/delete/:id:
+ * /api-v1/seo/delete/{id}:
  *   put:
  *     description: Delete seo
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
  *     tags:
  *      - Seo
  *     produces:

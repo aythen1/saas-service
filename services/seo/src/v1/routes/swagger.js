@@ -9,7 +9,7 @@ const swaggerOptions = {
     info: {
       version: '1.0.0',
       title: 'Documentation SEO',
-      description: 'API SEO routes use'
+      description: 'API SEO routes and models'
     }
   },
   basePath: '/',
