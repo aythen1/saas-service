@@ -2,9 +2,9 @@ import { Router } from 'express'
 import { createProduct } from '../../controllers/product/add-product.js'
 import { deleteProduct } from '../../controllers/product/delete-product.js'
 
-const inputProductRouter = Router()
+const inputProductRoute = Router()
 
-inputProductRouter.post('/create', createProduct)
-inputProductRouter.put('/delete/:id', deleteProduct)
+inputProductRoute.post('/create', createProduct)
+inputProductRoute.put('/delete/:id', deleteProduct)
 
-export default inputProductRouter
+export default inputProductRoute
