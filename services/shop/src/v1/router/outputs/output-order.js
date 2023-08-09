@@ -1,8 +1,8 @@
 import { Router } from 'express'
 import { getOrderByPk } from '../../controllers/order/get-id-order.js'
 
-const outPutOrderRouter = Router()
+const outPutOrderRoute = Router()
 
-outPutOrderRouter.get('/:id', getOrderByPk)
+outPutOrderRoute.get('/:id', getOrderByPk)
 
-export default outPutOrderRouter
+export default outPutOrderRoute
