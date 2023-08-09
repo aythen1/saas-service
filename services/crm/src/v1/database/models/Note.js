@@ -7,6 +7,10 @@ export default (sequelize) => {
     },
     text: {
       type: DataTypes.STRING()
+    },
+    isDisable: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   })
 }

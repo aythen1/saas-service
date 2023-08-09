@@ -7,6 +7,8 @@ import inputPaymentRoutes from './inputs/input-payment.js'
 import outputPaymentRoutes from './outputs/output-payment.js'
 import inputEventRoutes from './inputs/input-event.js'
 import outputEventRoutes from './outputs/output-event.js'
+import inputNoteRoutes from './inputs/input-note.js'
+import outputNoteRoutes from './outputs/output-note.js'
 
 const index = Router()
 
@@ -17,5 +19,6 @@ index
   .use('/user', inputUserRoute, outputUserRoutes)
   .use('/event', inputEventRoutes, outputEventRoutes)
   .use('/payment', inputPaymentRoutes, outputPaymentRoutes)
+  .use('/note', inputNoteRoutes, outputNoteRoutes)
 
 export default index
