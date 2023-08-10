@@ -1,10 +1,10 @@
 import { Order } from '../../database/connection/connectionDB.js'
 
 export const addOrder = async (req, res, next) => {
-  const { truckingNumber } = req.body
+  const { truckingNumber, fee, total, date, status, address } = req.body
 
-  if (!truckingNumber) {
-    res.status(404).json({ message: 'truckingNumber is missing' })
+  if (!truckingNumber && !fee && !total && !date && !status && address) {
+    res.status(404).json({ message: 'Debe ingresar todos los campos requeridos' })
   } else {
     try {
       const newOrder = await Order.create(req.body)

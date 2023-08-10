@@ -1,7 +1,7 @@
 import { Router } from 'express'
-import { productsFindAll } from '../../controllers/product/get-all-product.js'
+import { getProductsOfShop } from '../../controllers/product/get-all-shopId-product.js'
 
 const outPutProductRouter = Router()
-outPutProductRouter.get('/findAll/:shopId', productsFindAll)
+outPutProductRouter.get('/findAll/:shopId', getProductsOfShop)
 
 export default outPutProductRouter

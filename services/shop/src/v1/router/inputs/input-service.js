@@ -4,7 +4,7 @@ import { deleteService } from '../../controllers/service/delete-service.js'
 
 const inputServiceRoute = Router()
 
-inputServiceRoute.post('/create', createService)
+inputServiceRoute.post('/create/:UserId', createService)
 inputServiceRoute.put('/delete', deleteService)
 
 export default inputServiceRoute

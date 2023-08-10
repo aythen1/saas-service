@@ -1,9 +1,9 @@
 import { Speciality } from '../../database/connection/connectionDB.js'
 
 export const createSpeciality = async (req, res, next) => {
-  const { name } = req.body
+  const { name, serviceId } = req.body
 
-  if (!name) return res.status(404).json({ message: 'debe proporcionar un nombre de especialidad' })
+  if (!name && !serviceId) return res.status(404).json({ message: 'Debe ingresar todos los campos requeridos' })
 
   try {
     const carga = await Speciality.create(req.body)

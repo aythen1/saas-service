@@ -1,10 +1,10 @@
 import { Answer } from '../../database/connection/connectionDB.js'
 
 export const addAnswer = async (req, res, next) => {
-  const { name, image, quote } = req.body
+  const { image, message, date } = req.body
 
   try {
-    if (!name && !image && !quote) {
+    if (!image && !message && !date) {
       throw new Error('Debe ingresar todos los campos requeridos')
     } else {
       const newAnswer = await Answer.create(req.body)

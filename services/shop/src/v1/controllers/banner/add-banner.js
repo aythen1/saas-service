@@ -1,10 +1,10 @@
 import { Banner } from '../../database/connection/connectionDB.js'
 
 export const addBanner = async (req, res, next) => {
-  const { name, image, quote } = req.body
+  const { tittle, description, gallery } = req.body
 
   try {
-    if (!name && !image && !quote) {
+    if (!tittle && !description && !gallery) {
       throw new Error('Debe ingresar todos los campos requeridos')
     } else {
       const newBanner = await Banner.create(req.body)

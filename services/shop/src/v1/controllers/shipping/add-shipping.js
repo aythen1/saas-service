@@ -1,10 +1,10 @@
 import { Shipping } from '../../database/connection/connectionDB.js'
 
 export const addShipping = async (req, res, next) => {
-  const { name } = req.body
+  const { name, amount, global, shippingType } = req.body
 
-  if (!name) {
-    res.status(404).json({ message: 'name is missing' })
+  if (!name && !amount && !global && !shippingType) {
+    res.status(404).json({ message: 'Debe ingresar todos los campos requeridos' })
   } else {
     try {
       const newShipping = await Shipping.create(req.body)

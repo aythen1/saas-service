@@ -1,10 +1,10 @@
 import { Coupon } from '../../database/connection/connectionDB.js'
 
 export const addCoupon = async (req, res, next) => {
-  const { name, image, quote } = req.body
+  const { image, code, description, amount, activeFrom, willExpire } = req.body
 
   try {
-    if (!name && !image && !quote) {
+    if (!image && !code && description && amount && activeFrom && willExpire) {
       throw new Error('Debe ingresar todos los campos requeridos')
     } else {
       const newCoupon = await Coupon.create(req.body)

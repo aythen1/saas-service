@@ -1,10 +1,10 @@
 import { Withdrawals } from '../../database/connection/connectionDB.js'
 
 export const addWithdrawals = async (req, res, next) => {
-  const { name, image, quote } = req.body
+  const { amount, licenseNumber } = req.body
 
   try {
-    if (!name && !image && !quote) {
+    if (!amount && !licenseNumber) {
       throw new Error('Debe ingresar todos los campos requeridos')
     } else {
       const newWithdrawals = await Withdrawals.create(req.body)

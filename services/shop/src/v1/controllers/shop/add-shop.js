@@ -1,7 +1,7 @@
 import { Shop } from '../../database/connection/connectionDB.js'
 
 export const createShop = async (req, res, next) => {
-  const data = req.body
+  const { logo, name, UserId } = req.body
   /*
     {
         UserId: null,
@@ -26,8 +26,10 @@ export const createShop = async (req, res, next) => {
     }
     */
 
+  if (!logo && !name && !UserId) res.status(404).json({ message: 'Debe ingresar todos los campos requeridos' })
+
   try {
-    const carga = await Shop.create(data)
+    const carga = await Shop.create(req.body)
     res.json({ message: 'result', carga })
   } catch (error) {
     return next(error)

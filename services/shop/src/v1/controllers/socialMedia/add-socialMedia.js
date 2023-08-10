@@ -1,10 +1,10 @@
 import { SocialMedia } from '../../database/connection/connectionDB.js'
 
 export const addSocialMedia = async (req, res, next) => {
-  const { name } = req.body
+  const { name, profileUrl } = req.body
 
   try {
-    if (!name) {
+    if (!name && !profileUrl) {
       throw new Error('Debe ingresar todos los campos requeridos')
     } else {
       const newSocialMedia = await SocialMedia.create(req.body)

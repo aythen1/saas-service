@@ -1,10 +1,10 @@
 import { Sell } from '../../database/connection/connectionDB.js'
 
 export const addSell = async (req, res, next) => {
-  const { name, image, quote } = req.body
+  const { dateTransaction, status } = req.body
 
   try {
-    if (!name && !image && !quote) {
+    if (!dateTransaction && !status) {
       throw new Error('Debe ingresar todos los campos requeridos')
     } else {
       const newSell = await Sell.create(req.body)

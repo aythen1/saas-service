@@ -13,7 +13,7 @@ export const getServiceByIdUser = async (req, res, next) => {
     })
     // console.log({ consult, idUser })
     res.json({
-      message: 'Usuario econtrado',
+      message: 'servicios econtrados',
       consult,
       idUser
     })

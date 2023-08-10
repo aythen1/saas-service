@@ -1,10 +1,10 @@
 import { Taxes } from '../../database/connection/connectionDB.js'
 
 export const addTaxes = async (req, res, next) => {
-  const { name, image, quote } = req.body
+  const { name, rate, country, city, state, zip } = req.body
 
   try {
-    if (!name && !image && !quote) {
+    if (!name && !rate && !country && !city && !state && !zip) {
       throw new Error('Debe ingresar todos los campos requeridos')
     } else {
       const newTaxes = await Taxes.create(req.body)

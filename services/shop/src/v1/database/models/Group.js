@@ -17,22 +17,6 @@ export default (sequelize) => {
     },
     promotionalSlide: {
       type: DataTypes.STRING
-    },
-    icon: {
-      type: DataTypes.STRING
-      // allowNull: false
-    },
-    layout: {
-      type: DataTypes.ENUM('classic', 'comapct', 'minimal', 'modern', 'standard')
-      // allowNull: false
-    },
-    productCard: {
-      type: DataTypes.ENUM('hellum', 'neon', 'argon', 'kypton', 'xenon', 'radon')
-      //  allowNull: false
-    },
-    promotionalSlider: {
-      type: DataTypes.STRING
-      // allowNull: false
     }
   })
 }

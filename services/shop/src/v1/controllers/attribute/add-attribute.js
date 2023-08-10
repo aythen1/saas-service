@@ -1,10 +1,10 @@
 import { Attribute } from '../../database/connection/connectionDB.js'
 
 export const addAttribute = async (req, res, next) => {
-  const { name, image, quote } = req.body
+  const { name, value } = req.body
 
   try {
-    if (!name && !image && !quote) {
+    if (!name && !value) {
       throw new Error('Debe ingresar todos los campos requeridos')
     } else {
       const newAttribute = await Attribute.create(req.body)

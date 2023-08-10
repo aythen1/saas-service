@@ -45,30 +45,43 @@ export const {
   Review
 } = db.models
 
-// relaciones
+// RELACIONES DE SHOP
 
 // relacion uno a uno
-
-Product.belongsTo(Order)
-Order.belongsTo(Product)
-Product.belongsTo(Shipping)
-Shipping.belongsTo(Product)
 Shipping.belongsTo(Order)
 Order.belongsTo(Shipping)
 
-// relacion uno a muchos
+Product.belongsTo(Order)
+Order.belongsTo(Product)
 
-// asociaciones para las tiendas
+Product.belongsTo(Shipping)
+Shipping.belongsTo(Product)
+
+// relacion uno a muchos
 User.hasMany(Shop)
 Shop.belongsTo(User)
+
 Group.hasMany(Product)
 Product.belongsTo(Group)
+
 Category.hasMany(Product)
 Product.belongsTo(Category)
 
-// asociaciones para los servicios
+Product.hasMany(Banner)
+Banner.belongsTo(Product)
+
+// relacion muchos a muchos
+Shop.belongsToMany(Product, { through: 'Shop_Product' })
+Product.belongsToMany(Shop, { through: 'Shop_Product' })
+
+// RELACIONES DE SERVICIOS
+
+// relación uno a uno
+
+// relación uno a muchos
 User.hasMany(Service)
 Service.belongsTo(User)
+
 Service.hasMany(Review)
 Review.belongsTo(Service)
 
@@ -78,13 +91,8 @@ Product.belongsTo(Author)
 Author.hasMany(SocialMedia)
 SocialMedia.belongsTo(Author)
 
-// relacion muchos a muchos
-
-Shop.belongsToMany(Product, { through: 'Shop_Product' })
-Product.belongsToMany(Shop, { through: 'Shop_Product' })
-
+// relación muchos a muchos
 Service.belongsToMany(Speciality, { through: 'Service_Speciality' })
 Speciality.belongsToMany(Service, { through: 'Service_Speciality' })
 
-// User.hasMany(Product)
-// Product.belongsTo(User)
+// RELACIONES DE DELIVERY
