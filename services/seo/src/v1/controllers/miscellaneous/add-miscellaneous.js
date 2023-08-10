@@ -1,16 +1,20 @@
 import axios from 'axios'
 import { JSDOM } from 'jsdom'
 import { load } from 'cheerio'
-import { Miscellaneou, Website } from '../../database/connection/connectionDB.js'
+import { Miscellaneou, Website, User } from '../../database/connection/connectionDB.js'
 
 export const addMiscellaneous = async (req, res) => {
-  const { url } = req.body
+  const { url, userId } = req.body
 
   if (!url) {
     return res.status(404).send('Url is missing')
   }
   try {
+    const user = await User.findByPk(userId)
     const website = await Website.findOrCreate({ where: { domain: url } })
+
+    if (!website[0].UserId) await user.addWebsite(website[0])
+
     const response = await axios.get(url)
     const htmlText = response.data
 

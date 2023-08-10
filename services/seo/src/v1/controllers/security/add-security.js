@@ -1,15 +1,18 @@
 import axios from 'axios'
 import { JSDOM } from 'jsdom'
-import { Security, Website } from '../../database/connection/connectionDB.js'
+import { Security, Website, User } from '../../database/connection/connectionDB.js'
 
 export const addSecurity = async (req, res) => {
-  const { url } = req.body
+  const { url, userId } = req.body
 
   if (!url) {
     return res.status(404).send('Url is missing')
   }
   try {
+    const user = await User.findByPk(userId)
     const website = await Website.findOrCreate({ where: { domain: url } })
+
+    if (!website[0].UserId) await user.addWebsite(website[0])
 
     const response = await axios.get(url)
 

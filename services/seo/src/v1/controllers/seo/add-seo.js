@@ -1,16 +1,19 @@
 import axios from 'axios'
 import { load } from 'cheerio'
-import { Seo, Website, Headers } from '../../database/connection/connectionDB.js'
+import { Seo, Website, Headers, User } from '../../database/connection/connectionDB.js'
 
 export const addSeo = async (req, res) => {
-  const { url } = req.body
+  const { url, userId } = req.body
 
   if (!url) {
     return res.status(404).send('Url is missing')
   }
 
   try {
+    const user = await User.findByPk(userId)
     const website = await Website.findOrCreate({ where: { domain: url } })
+
+    if (!website[0].UserId) await user.addWebsite(website[0])
 
     const response = await axios.get(url)
     const $ = load(response.data)
@@ -147,3 +150,10 @@ export const addSeo = async (req, res) => {
     res.status(404).send(error.message)
   }
 }
+
+/*
+"email": "mario@caballero.com",
+"password": "abcdefgh"
+"url": "https://autoescuelaroan.com",
+"userId": 1
+*/
