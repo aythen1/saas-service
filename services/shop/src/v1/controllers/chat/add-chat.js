@@ -1,10 +1,10 @@
 import { Chat } from '../../database/connection/connectionDB.js'
 
 export const addChat = async (req, res, next) => {
-  const { name, image, quote } = req.body
+  const { message } = req.body
 
   try {
-    if (!name && !image && !quote) {
+    if (!message) {
       throw new Error('Debe ingresar todos los campos requeridos')
     } else {
       const newChat = await Chat.create(req.body)

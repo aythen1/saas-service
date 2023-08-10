@@ -1,10 +1,10 @@
 import { Manufacturers } from '../../database/connection/connectionDB.js'
 
 export const addManufacturers = async (req, res, next) => {
-  const { name, image, quote } = req.body
+  const { logo, convertImage, name, website, description } = req.body
 
   try {
-    if (!name && !image && !quote) {
+    if (!logo && !convertImage && !name && !website && description) {
       throw new Error('Debe ingresar todos los campos requeridos')
     } else {
       const newManufacturers = await Manufacturers.create(req.body)

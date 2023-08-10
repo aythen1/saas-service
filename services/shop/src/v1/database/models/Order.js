@@ -22,7 +22,7 @@ export default (sequelize) => {
       type: DataTypes.ENUM('inProgress', 'cart', 'shipping', 'ready'),
       allowNull: false
     },
-    adress: {
+    address: {
       type: DataTypes.STRING
     //  allowNull: false
     }
