@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
-import { db, Miscellaneous } from '../../src/v1/database/conection/conectionDB'
+import { db, Miscellaneou } from '../../src/v1/database/conection/conectionDB'
 
 describe('Miscellaneous Model', () => {
   beforeAll(async () => {
@@ -7,7 +7,7 @@ describe('Miscellaneous Model', () => {
   })
 
   it('should create miscellaneous if domain is passed', async () => {
-    const miscellaneous = await Miscellaneous.create({
+    const miscellaneous = await Miscellaneou.create({
       metaViewport: 'kjaskfj'
     })
     expect(miscellaneous.toJSON()).toHaveProperty('metaViewport', 'kjaskfj')
