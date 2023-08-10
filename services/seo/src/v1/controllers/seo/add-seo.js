@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { load } from 'cheerio'
-import { Seo, Website, Headers } from '../../database/conection/conectionDB.js'
+import { Seo, Website, Headers } from '../../database/connection/connectionDB.js'
 
 export const addSeo = async (req, res) => {
   const { url } = req.body

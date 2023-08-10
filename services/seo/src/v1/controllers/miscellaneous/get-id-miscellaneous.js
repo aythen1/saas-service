@@ -1,4 +1,4 @@
-import { Miscellaneou } from '../../database/conection/conectionDB.js'
+import { Miscellaneou } from '../../database/connection/connectionDB.js'
 
 export const getMiscellaneousByPk = async (req, res) => {
   const { id } = req.params

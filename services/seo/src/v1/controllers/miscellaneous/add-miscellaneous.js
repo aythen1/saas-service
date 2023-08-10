@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { JSDOM } from 'jsdom'
 import { load } from 'cheerio'
-import { Miscellaneou, Website } from '../../database/conection/conectionDB.js'
+import { Miscellaneou, Website } from '../../database/connection/connectionDB.js'
 
 export const addMiscellaneous = async (req, res) => {
   const { url } = req.body

@@ -1,4 +1,4 @@
-import { Website } from '../../database/conection/conectionDB.js'
+import { Website } from '../../database/connection/connectionDB.js'
 
 export const getAllWebsites = async (req, res) => {
   try {

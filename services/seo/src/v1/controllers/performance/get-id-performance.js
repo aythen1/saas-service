@@ -1,4 +1,4 @@
-import { Performance } from '../../database/conection/conectionDB.js'
+import { Performance } from '../../database/connection/connectionDB.js'
 
 export const getPerformanceByPk = async (req, res) => {
   const { id } = req.params

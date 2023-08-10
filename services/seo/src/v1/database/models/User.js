@@ -14,7 +14,7 @@ export default (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isAlphanumeric: true,
+        // isAlphanumeric: true,
         isEven (value) {
           if (value.length < 8) {
             throw new Error('Min length is 8')

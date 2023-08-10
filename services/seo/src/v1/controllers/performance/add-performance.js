@@ -2,7 +2,7 @@
 import axios from 'axios'
 import { load } from 'cheerio'
 import zlib from 'zlib'
-import { Performance, Website } from '../../database/conection/conectionDB.js'
+import { Performance, Website } from '../../database/connection/connectionDB.js'
 
 export const addPerformance = async (req, res) => {
   const { url } = req.body

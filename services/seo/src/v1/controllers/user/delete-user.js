@@ -1,4 +1,4 @@
-import { User } from '../../database/conection/conectionDB.js'
+import { User } from '../../database/connection/connectionDB.js'
 
 export const deleteUser = async (req, res) => {
   const { id } = req.params

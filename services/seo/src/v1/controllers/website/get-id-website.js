@@ -4,7 +4,7 @@ import {
   Performance,
   Security,
   Miscellaneou
-} from '../../database/conection/conectionDB.js'
+} from '../../database/connection/connectionDB.js'
 
 export const getWebsiteByPk = async (req, res) => {
   const { id } = req.params

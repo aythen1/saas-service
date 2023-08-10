@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { JSDOM } from 'jsdom'
-import { Security, Website } from '../../database/conection/conectionDB.js'
+import { Security, Website } from '../../database/connection/connectionDB.js'
 
 export const addSecurity = async (req, res) => {
   const { url } = req.body

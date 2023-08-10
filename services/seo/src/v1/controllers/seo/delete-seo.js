@@ -1,4 +1,4 @@
-import { Seo } from '../../database/conection/conectionDB.js'
+import { Seo } from '../../database/connection/connectionDB.js'
 
 export const deleteSeo = async (req, res) => {
   const { id } = req.params
