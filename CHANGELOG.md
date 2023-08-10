@@ -2,6 +2,54 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/aythen1/saas-service/compare/v0.0.1...v0.0.2) (2023-08-10)
+
+
+### Features
+
+* add prettierrc.json ([e2c7ab7](https://github.com/aythen1/saas-service/commit/e2c7ab78a58bb6834f3e0eecf377010afb1df663))
+* agregado de todos los modelos en CRM fix: Cambio de archivo userModel por User ([2bea5c5](https://github.com/aythen1/saas-service/commit/2bea5c5c276e5d175a18d8f433d327d70a370d99))
+* agregado de todos los modelos en OFFICE fix: Cambio de archivo userModel por User ([a50d1c2](https://github.com/aythen1/saas-service/commit/a50d1c28367928482c79a0cf30a3f2803567190f))
+* agregado de todos los modelos en RRSS fix: Cambio de archivo userModel por User ([4a65a36](https://github.com/aythen1/saas-service/commit/4a65a368fe4d150686514cdd71c02c971bf3b5e0))
+* create router y controller para modelo USER ([b083630](https://github.com/aythen1/saas-service/commit/b083630e003063ce625fcb12f029041749eb74bc))
+* create router&controller Group/Category ([5b6c395](https://github.com/aythen1/saas-service/commit/5b6c3959f0a552e4703288734cb13eb0cda3aca8))
+* create router&controller Group/Category/Author/SocialMedial ([b1bb657](https://github.com/aythen1/saas-service/commit/b1bb6579a8a0e8dbe940883643c59495fa9d1f71))
+* modelos, rutas y controller de Author y SocialMedia ([5816409](https://github.com/aythen1/saas-service/commit/581640969a94723755bd257e490ef356e1001a95))
+* **Root:** agregué dependencias y modularicé la autenticación de usuarios ([3b88c4d](https://github.com/aythen1/saas-service/commit/3b88c4d1778fe6fac6ac86c0b97c3fab45b5b447))
+* **Root:** configure lint-staged and project settings ([707a0bb](https://github.com/aythen1/saas-service/commit/707a0bb8b38eda47cf56f003356d40f6d1da507b))
+* se crearon rutas y controlers basicos para el modelo payment ([592b4a6](https://github.com/aythen1/saas-service/commit/592b4a6f9bb57d890963b24c7da8554282f313a0))
+* **services/crm:** controller and routes of event models ([b1963ba](https://github.com/aythen1/saas-service/commit/b1963baf298cf4f9fc2a95608596093aaa20ec0e))
+* **services/crm:** creacion de controller y routes basicos para modelos de note ([90b9879](https://github.com/aythen1/saas-service/commit/90b9879c1113629007a45ceed61f001b4ac1cf0f))
+* **services/crm:** crontroller y routes basicos del modelo Calls ([c2f959f](https://github.com/aythen1/saas-service/commit/c2f959f34dcc863ffc48aebbe6faea808d3df515))
+* **services/seo:** add authentication controller, routes and config ([6025b26](https://github.com/aythen1/saas-service/commit/6025b268d8887ff98169ff80fe4c7c02dc91f2c4))
+* **services/seo:** add documentation on routes ([8b468c9](https://github.com/aythen1/saas-service/commit/8b468c92b299f2aab1dbabfef945634a303565de))
+* **services/seo:** add relation user with websites ([212c625](https://github.com/aythen1/saas-service/commit/212c625cc635265bb57dbce021e9ef4d907dfcc8))
+* **services/shop:** creación  de los controladores y rutas de los modelos faltantes ([13afc37](https://github.com/aythen1/saas-service/commit/13afc3780f9817a75bac9182e64cf8319d076b3a))
+* **services/shop:** creación de controladores específicos de shop y servicios ([bb8cf75](https://github.com/aythen1/saas-service/commit/bb8cf7506f1989275eacf68fad0288074744fde1))
+* **services/shop:** creación de modelos Service, Speciality, Review y Delivery. Creación de control ([444bd0b](https://github.com/aythen1/saas-service/commit/444bd0bb2c99830a4fa71019a4798211c77e2b7f))
+* **shop:** agrego los modelos que faltan en shop ([6beb107](https://github.com/aythen1/saas-service/commit/6beb1076a300726c8beb3d25a2efc4ca5d89cef1))
+
+
+### Bug Fixes
+
+* change db conection ([910a598](https://github.com/aythen1/saas-service/commit/910a5985f97559bbb4358615df179ba9aea4fcfc))
+* conflictos resueltos ([c0ca32d](https://github.com/aythen1/saas-service/commit/c0ca32d1987198f44a46e39680835cf63d28d47e))
+* getProductsByShopId  feat: orderRouter&Controller ([12bbf32](https://github.com/aythen1/saas-service/commit/12bbf32bb0e3648ecf8454afbeedcae6a344fc80))
+* resolve conflict ([d4f7584](https://github.com/aythen1/saas-service/commit/d4f7584a4f9f54e124a72ceebb30f78a77b32ee5))
+* resolviendo conflictos! ([9171960](https://github.com/aythen1/saas-service/commit/9171960d207403be8d60016bd3d96f4336e1a3d9))
+* **Root:** desinstalación de dependencias del package.json ([af4c1e5](https://github.com/aythen1/saas-service/commit/af4c1e50019ab42d059978c3feb907dfef6a37e4))
+* **Root:** type module package.json and rename configs ([4a6ab2e](https://github.com/aythen1/saas-service/commit/4a6ab2ee55c555e973508ea38ff51da14d95b7d5))
+* se agrego propiedad para deshabilitar usuario ([6483a2b](https://github.com/aythen1/saas-service/commit/6483a2b9e4a9c11008619d29453cf6283a964907))
+* **services/seo:** change add security controller and security routes ([398a9c0](https://github.com/aythen1/saas-service/commit/398a9c08496a0266336f90655c2b4217829b9292))
+* **services/seo:** change imports and type property ([1dbba7d](https://github.com/aythen1/saas-service/commit/1dbba7dc2b73f10191ca4d0b763bc1cb71003a7a))
+* **services/seo:** change miscellaneous logic and routes ([98e7494](https://github.com/aythen1/saas-service/commit/98e74949cdcecd305e6d7847d2d66d3c468b44a7))
+* **services/seo:** change some properties on model and controller ([25aca04](https://github.com/aythen1/saas-service/commit/25aca044c436cef060fa7ed47308f82c53b91558))
+* **services/seo:** delete unused headers controllers and routes ([b3ba6de](https://github.com/aythen1/saas-service/commit/b3ba6de150d927b56f17fb8c3e10f795a2edbe87))
+* **services/seo:** fix add controller on performance and fix routes and index ([a3cd020](https://github.com/aythen1/saas-service/commit/a3cd020ff18b0e91f265f6f2d4623e2c142a01e4))
+* **services/seo:** fix controllers and routes to work sync ([c1c516f](https://github.com/aythen1/saas-service/commit/c1c516f15fa269912a8f867cbe092500a66f5183))
+* **services/shop:** ajuste en los modelos ([3b2f2ac](https://github.com/aythen1/saas-service/commit/3b2f2ac95d867126bc212f53738500f89c4ef89e))
+* **services/shop:** creación del control centralizado de errores y el correcto envio de los mismos e ([9af503c](https://github.com/aythen1/saas-service/commit/9af503ce8ba199ab3df26810fd017a948fbc3c57))
+
 ### 0.0.1 (2023-08-05)
 
 
