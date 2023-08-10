@@ -19,7 +19,7 @@ export default (sequelize) => {
       type: DataTypes.STRING
     },
     page404: {
-      type: DataTypes.BOOLEAN
+      type: DataTypes.STRING
     },
     robotsTxt: {
       type: DataTypes.STRING
