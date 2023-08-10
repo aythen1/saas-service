@@ -1,4 +1,4 @@
-import { User } from '../../database/conection/conectionDB.js'
+import { User } from '../../database/connection/connectionDB.js'
 
 export const updateUser = async (req, res) => {
   const { id } = req.params
@@ -18,6 +18,7 @@ export const updateUser = async (req, res) => {
       },
       { where: id }
     )
+    return res.send(`The userId: ${id} was succesful update`)
   } catch (error) {
     return res.status(404).send(error.message)
   }

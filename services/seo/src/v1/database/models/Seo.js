@@ -10,25 +10,25 @@ export default (sequelize) => {
       type: DataTypes.STRING
     },
     contentKeywords: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     imageKeywords: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     friendlySeoUrl: {
       type: DataTypes.STRING
     },
     page404: {
-      type: DataTypes.BOOLEAN
+      type: DataTypes.STRING
     },
     robotsTxt: {
       type: DataTypes.STRING
     },
     noindex: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     linksOnPage: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     language: {
       type: DataTypes.STRING

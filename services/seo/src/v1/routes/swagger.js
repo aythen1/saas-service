@@ -25,7 +25,8 @@ const swaggerOptions = {
     './src/v1/routes/inputs/input-seo.js',
     './src/v1/routes/inputs/input-security.js',
     './src/v1/routes/inputs/input-performance.js',
-    './src/v1/routes/inputs/input-miscellaneous.js'
+    './src/v1/routes/inputs/input-miscellaneous.js',
+    './src/v1/routes/inputs/input-user-register.js'
   ]
 }
 

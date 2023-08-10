@@ -12,25 +12,25 @@ export default (sequelize) => {
       type: DataTypes.FLOAT
     },
     httpRequestJs: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     httpRequestCss: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     httpRequestImages: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     imageFormatAvif: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     imageFormatWebP: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     imageFormatOther: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     javascriptDefer: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     domSize: {
       type: DataTypes.FLOAT

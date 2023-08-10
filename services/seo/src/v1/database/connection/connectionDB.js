@@ -18,7 +18,7 @@ models.forEach((model) => model(db))
 
 export const {
   Headers,
-  Miscellaneous,
+  Miscellaneou,
   Performance,
   Security,
   Seo,
@@ -40,8 +40,8 @@ Performance.belongsTo(Website)
 Website.hasOne(Security)
 Security.belongsTo(Website)
 
-Website.hasOne(Miscellaneous)
-Miscellaneous.belongsTo(Website)
+Website.hasOne(Miscellaneou)
+Miscellaneou.belongsTo(Website)
 
 Seo.hasOne(Headers)
 Headers.belongsTo(Seo)

@@ -8,9 +8,9 @@ describe('Performance Model', () => {
 
   it('should create performance if domain is passed', async () => {
     const performance = await Performance.create({
-      textCompression: true
+      textCompression: 14.5
     })
-    expect(performance.toJSON()).toHaveProperty('textCompression', true)
+    expect(performance.toJSON()).toHaveProperty('textCompression', 14.5)
   })
 
   // falta agregar relaciones y mas validadores en el modelo

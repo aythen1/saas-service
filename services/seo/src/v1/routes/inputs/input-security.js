@@ -1,9 +1,34 @@
 import { Router } from 'express'
-import { addSecurity } from '../../controllers/security/add-security'
-import { deleteSecurity } from '../../controllers/security/delete-security'
+import { addSecurity } from '../../controllers/security/add-security.js'
+import { deleteSecurity } from '../../controllers/security/delete-security.js'
 
 const inputSecurityRoutes = Router()
 
+/**
+ * @swagger
+ * /api-v1/security:
+ *   post:
+ *     description: Create security
+ *     tags:
+ *      - Security
+ *     produces:
+ *      - application/json
+ *     parameters:
+ *      - in: body
+ *        required: true
+ *        schema:
+ *          type: object
+ *          properties:
+ *            url:
+ *              type: string
+ *              description: url to analize
+ *              example: https:google.com
+ *          required:
+ *            - url
+ *     responses:
+ *       201:
+ *         description: security
+ */
 inputSecurityRoutes.post('/', addSecurity)
 
 /**

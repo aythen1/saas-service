@@ -55,9 +55,13 @@ const userInputRoutes = Router()
  *              example: usuario@example.com
  *            password:
  *              type: string
+ *              description: Contraseña alfanumerica
+ *              example: abc123456
  *              required: true
  *            name:
  *              type: string
+ *              description: Nombre y apellido
+ *              example: jose perez
  *          required:
  *            - email
  *     responses:
@@ -66,6 +70,44 @@ const userInputRoutes = Router()
  */
 userInputRoutes.post('/', addUser)
 
+/**
+ * @swagger
+ * /api-v1/user/{id}:
+ *   put:
+ *     description: Update user
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
+ *      - in: body
+ *        required: true
+ *        schema:
+ *          type: object
+ *          properties:
+ *            email:
+ *              type: string
+ *            password:
+ *              type: string
+ *            name:
+ *              type: string
+ *            timezone:
+ *              type: string
+ *            avatar:
+ *              type: string
+ *            url:
+ *              type: string
+ *            phone:
+ *              type: string
+ *            apiKey:
+ *              type: string
+ *     tags:
+ *      - Users
+ *     produces:
+ *      - application/json
+ *     responses:
+ *       201:
+ *         description: user
+ */
 userInputRoutes.put('/:id', updateUser)
 
 /**

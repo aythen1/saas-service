@@ -1,15 +1,17 @@
 import {
   Website,
   Seo,
-  Performance
-} from '../../database/conection/conectionDB.js'
+  Performance,
+  Security,
+  Miscellaneou
+} from '../../database/connection/connectionDB.js'
 
 export const getWebsiteByPk = async (req, res) => {
   const { id } = req.params
 
   try {
     const website = await Website.findByPk(id, {
-      include: [Seo, Performance]
+      include: [Seo, Performance, Security, Miscellaneou]
     })
     if (!website) {
       return res.status(404).send(`The websiteId: ${id} doesn't exist`)

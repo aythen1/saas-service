@@ -1,19 +1,22 @@
 import axios from 'axios'
-import cheerio from 'cheerio'
-import { Seo, Website, Headers } from '../../database/conection/conectionDB.js'
+import { load } from 'cheerio'
+import { Seo, Website, Headers, User } from '../../database/connection/connectionDB.js'
 
 export const addSeo = async (req, res) => {
-  const { url } = req.body
+  const { url, userId } = req.body
 
   if (!url) {
     return res.status(404).send('Url is missing')
   }
 
   try {
+    const user = await User.findByPk(userId)
     const website = await Website.findOrCreate({ where: { domain: url } })
 
+    if (!website[0].UserId) await user.addWebsite(website[0])
+
     const response = await axios.get(url)
-    const $ = cheerio.load(response.data)
+    const $ = load(response.data)
 
     // Obtener la etiqueta <title> y su contenido
     const title = $('title').text()
@@ -37,33 +40,38 @@ export const addSeo = async (req, res) => {
     })
     const contentKeywords = keywordsInContent.filter(
       (keyword) => keyword.trim() !== ''
-    )
+    ).filter((value, index, self) => {
+      return self.indexOf(value) === index
+    })
 
     // Obtener las palabras clave de imagen (según el atributo alt de cada imagen)
     const allImages = $('img')
     const imageKeywords = allImages
       .filter((index, element) => !$(element).attr('alt'))
-      .map((index, element) => $(element).prop('outerHTML'))
+      .map((index, element) => $(element).attr('src'))
       .get()
 
     // Verificar si el dominio es amigable con SEO
-    const friendlySeoUrl = !!title && !!metaDescription
+    const checkFriendlySeo = !!title && !!metaDescription
+    const friendlySeoUrl = checkFriendlySeo ? url : ''
 
     // Verificar si el dominio tiene páginas de error 404
     const has404Page = async () => {
       try {
         // Intentar acceder a una URL que sabes que no existe
-        const response = await axios.get(`${url}/this-url-does-not-exist`)
+        const errorUrl = `${url}/404-55d83d85f11da3154c7cb2b4364ee9a9`
+        const response = await axios.get(errorUrl)
         if (response.status === 404) {
-          return true
+          return errorUrl
         } else {
-          return false
+          return ''
         }
       } catch (error) {
+        const errorUrl = `${url}/404-55d83d85f11da3154c7cb2b4364ee9a9`
         if (error.response && error.response.status === 404) {
-          return true
+          return errorUrl
         } else {
-          return false
+          return ''
         }
       }
     }
@@ -86,7 +94,7 @@ export const addSeo = async (req, res) => {
     const language = $('html').attr('lang')
 
     // Verificar si el dominio tiene un favicon
-    const favicon = $('link[rel="icon"]').length > 0
+    const favicon = $('link[rel="icon"]').attr('href')
 
     // Obtener los enlaces en la página en JavaScript
     const allLinks = $('a')
@@ -142,3 +150,10 @@ export const addSeo = async (req, res) => {
     res.status(404).send(error.message)
   }
 }
+
+/*
+"email": "mario@caballero.com",
+"password": "abcdefgh"
+"url": "https://autoescuelaroan.com",
+"userId": 1
+*/

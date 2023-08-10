@@ -12,10 +12,10 @@ export default (sequelize) => {
       type: DataTypes.STRING
     },
     unsafeCORS: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     plaintextEmail: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     isDisable: {
       type: DataTypes.BOOLEAN,

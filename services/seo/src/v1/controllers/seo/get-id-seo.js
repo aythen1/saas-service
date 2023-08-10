@@ -1,4 +1,4 @@
-import { Headers, Seo } from '../../database/conection/conectionDB.js'
+import { Headers, Seo } from '../../database/connection/connectionDB.js'
 
 export const getSeoByPk = async (req, res) => {
   const { id } = req.params

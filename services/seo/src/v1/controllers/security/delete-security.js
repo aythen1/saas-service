@@ -1,4 +1,4 @@
-import { Security } from '../../database/conection/conectionDB'
+import { Security } from '../../database/connection/connectionDB.js'
 
 export const deleteSecurity = async (req, res) => {
   const { id } = req.params
