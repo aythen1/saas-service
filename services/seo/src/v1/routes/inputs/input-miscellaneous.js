@@ -4,6 +4,31 @@ import { deleteMiscellaneous } from '../../controllers/miscellaneous/delete-misc
 
 const inputMiscellaneousRoutes = Router()
 
+/**
+ * @swagger
+ * /api-v1/miscellaneous:
+ *   post:
+ *     description: Create miscellaneous
+ *     tags:
+ *      - Miscellaneous
+ *     produces:
+ *      - application/json
+ *     parameters:
+ *      - in: body
+ *        required: true
+ *        schema:
+ *          type: object
+ *          properties:
+ *            url:
+ *              type: string
+ *              description: url to analize
+ *              example: https:google.com
+ *          required:
+ *            - url
+ *     responses:
+ *       201:
+ *         description: miscellaneous
+ */
 inputMiscellaneousRoutes.post('/', addMiscellaneous)
 
 /**
