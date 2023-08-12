@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 import axios from 'axios'
 import { load } from 'cheerio'
-import zlib from 'zlib'
+import zlib from 'node:zlib'
 import { Performance, Website, User } from '../../database/connection/connectionDB.js'
 
 export const addPerformance = async (req, res) => {

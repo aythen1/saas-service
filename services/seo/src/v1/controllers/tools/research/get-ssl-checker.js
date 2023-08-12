@@ -1,5 +1,8 @@
 import openssl from 'openssl-wrapper'
-import moment from 'moment'
+import dayjs from 'dayjs'
+import advancedFormat from 'dayjs/plugin/advancedFormat.js'
+
+dayjs.extend(advancedFormat)
 
 export const getCheckSSL = async (req, res) => {
   const { domain } = req.query
@@ -19,8 +22,8 @@ export const getCheckSSL = async (req, res) => {
     const issuer = certificateDetails.match(/Issuer: (.*?)\n/)[1]
     const organization = certificateDetails.match(/O = (.*?)\n/)[1]
     const signatureAlgorithm = certificateDetails.match(/Signature Algorithm: (.*?)\n/)[1]
-    const issuedDate = moment(certificateDetails.match(/Not Before: (.*?)\n/)[1], 'MMM DD HH:mm:ss YYYY Z').toISOString()
-    const expirationDate = moment(certificateDetails.match(/Not After: (.*?)\n/)[1], 'MMM DD HH:mm:ss YYYY Z').toISOString()
+    const issuedDate = dayjs(certificateDetails.match(/Not Before: (.*?)\n/)[1], 'MMM DD HH:mm:ss YYYY Z').toISOString()
+    const expirationDate = dayjs(certificateDetails.match(/Not After: (.*?)\n/)[1], 'MMM DD HH:mm:ss YYYY Z').toISOString()
 
     return res.status(200).send({
       domain,
