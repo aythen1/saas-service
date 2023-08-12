@@ -14,6 +14,7 @@ import inputMiscellaneousRoutes from './inputs/input-miscellaneous.js'
 import logInOut from './inputs/input-user-loginLogout.js'
 import registerRouter from './inputs/input-user-register.js'
 import outputToolsResearchRoutes from './outputs/outputs-tools-research.js'
+import outputToolsDeveloperRoutes from './outputs/outputs-tools-developer.js'
 
 const index = Router()
 
@@ -27,11 +28,11 @@ index
   .use('/security', outputSecurityRoutes, inputSecurityRoutes)
   .use('/performance', outputPerformanceRoutes, inputPerformanceRoutes)
   .use('/miscellaneous', outputMiscellaneousRoutes, inputMiscellaneousRoutes)
-  .use('/tools', outputToolsResearchRoutes)
+  .use('/tools', outputToolsResearchRoutes, outputToolsDeveloperRoutes)
 
-index.get('/', (req, res) => {
-  console.log(req.session)
-  res.json({ user: req.session })
-})
+  .get('/', (req, res) => {
+    console.log(req.session)
+    res.json({ user: req.session })
+  })
 
 export default index

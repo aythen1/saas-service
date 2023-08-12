@@ -14,28 +14,28 @@ import { getIdnConverter } from '../../controllers/tools/research/get-idn-conver
 
 const outputToolsResearchRoutes = Router()
 
-outputToolsResearchRoutes.get('/serp-research', getSERP)
+outputToolsResearchRoutes.get('/serp-checker', getSERP)
 
-outputToolsResearchRoutes.get('/indexed-pages-research', getIndexedPages)
+  .get('/indexed-pages', getIndexedPages)
 
-outputToolsResearchRoutes.get('/keyword-research', getKeywordResearch)
+  .get('/keyword', getKeywordResearch)
 
-outputToolsResearchRoutes.get('/website-status-research', getCheckWebsiteStatus)
+  .get('/website-status', getCheckWebsiteStatus)
 
-outputToolsResearchRoutes.get('/ssl-checker-research', getCheckSSL)
+  .get('/ssl-checker', getCheckSSL)
 
-outputToolsResearchRoutes.get('/dns-lookup-research', getDnsLookup)
+  .get('/dns-lookup', getDnsLookup)
 
-outputToolsResearchRoutes.get('/whois-lookup-research', getWhoisLookup)
+  .get('/whois-lookup', getWhoisLookup)
 
-outputToolsResearchRoutes.get('/ip-lookup-research', getIpLookup)
+  .get('/ip-lookup', getIpLookup)
 
-outputToolsResearchRoutes.get('/reverse-ip-lookup-research', getReverseIpLookup)
+  .get('/reverse-ip-lookup', getReverseIpLookup)
 
-outputToolsResearchRoutes.get('/domain-ip-lookup-research', getDomainIpLookup)
+  .get('/domain-ip-lookup', getDomainIpLookup)
 
-outputToolsResearchRoutes.get('/redirect-checker-research', getRedirectChecker)
+  .get('/redirect-checker', getRedirectChecker)
 
-outputToolsResearchRoutes.get('/idn-converter-research', getIdnConverter)
+  .get('/idn-converter', getIdnConverter)
 
 export default outputToolsResearchRoutes
