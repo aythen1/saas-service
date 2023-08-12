@@ -1,6 +1,6 @@
 import openssl from 'openssl-wrapper'
 import dayjs from 'dayjs'
-import advancedFormat from 'dayjs/plugin/advancedFormat'
+import advancedFormat from 'dayjs/plugin/advancedFormat.js'
 
 dayjs.extend(advancedFormat)
 
