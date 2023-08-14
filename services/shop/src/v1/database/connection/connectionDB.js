@@ -51,9 +51,6 @@ export const {
 Shipping.belongsTo(Order)
 Order.belongsTo(Shipping)
 
-Product.belongsTo(Order)
-Order.belongsTo(Product)
-
 Product.belongsTo(Shipping)
 Shipping.belongsTo(Product)
 
@@ -66,6 +63,9 @@ Product.belongsTo(Group)
 
 Category.hasMany(Product)
 Product.belongsTo(Category)
+
+Order.hasMany(Product)
+Product.belongsTo(Order)
 
 Product.hasMany(Banner)
 Banner.belongsTo(Product)
